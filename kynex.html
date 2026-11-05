@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0618">
+<title>KYNEX – Connect Your World</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c4b5fd%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237c3aed%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22%230b0618%22/%3E%3Cpath%20d%3D%22M150%20110h62v118l112-118h82L282%20256l124%20146h-82L212%20284v118h-62Z%22%20fill%3D%22url%28%23g%29%22/%3E%3C/svg%3E" type="image/svg+xml">
+<style>
+:root{--bg:#0b0618;--card:#161032;--card2:#1d1540;--line:#2a1f55;--p:#8b5cf6;--p2:#a78bfa;--p3:#6d3df0;--text:#f4f1ff;--muted:#9a93bd;--green:#34d399;--red:#fb7185;--radius:16px;--shell:#120a28}
+[data-theme="light"]{--bg:#f7f5ff;--card:#ffffff;--card2:#efeaff;--line:#e2dbf8;--text:#1b1238;--muted:#6d6692;--shell:#e3dcf8}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:'Inter','Segoe UI',system-ui,-apple-system,Roboto,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#2b1665 0,transparent 60%),radial-gradient(900px 500px at 100% 100%,#3a1a8a55 0,transparent 60%),#07030f;color:var(--text);display:flex;align-items:center;justify-content:center;gap:48px;overflow:hidden}
+[data-theme="light"] body{background:radial-gradient(1000px 500px at 20% -10%,#d9ccff 0,transparent 60%),#ece7fb}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,textarea,select{font:inherit;color:inherit;background:none;border:0;outline:0;width:100%}
+a{text-decoration:none}ul{list-style:none}
+h2,h3,h4{font-weight:700}
+.muted{color:var(--muted)}.small{font-size:12px}.center{text-align:center;display:block}
+[hidden]{display:none!important}
+
+.side{width:210px;display:none}
+.side-logo{font-weight:800;letter-spacing:3px;font-size:22px;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.side p{color:var(--muted);font-size:12px;margin-bottom:8px}
+.side button{display:block;width:100%;text-align:left;padding:9px 12px;border-radius:10px;color:var(--muted);font-size:14px}
+.side button:hover,.side button.on{background:var(--card2);color:var(--text)}
+@media(min-width:900px){.side{display:block}}
+
+.k-mark{display:inline-block;width:26px;height:26px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);clip-path:polygon(0 0,28% 0,28% 38%,72% 0,100% 0,52% 50%,100% 100%,70% 100%,28% 62%,28% 100%,0 100%)}
+.k-mark.big{width:84px;height:84px;filter:drop-shadow(0 0 24px #8b5cf6aa)}
+
+.phone{position:relative;width:390px;height:min(844px,100vh);background:var(--bg);overflow:hidden;border-radius:44px;border:2px solid #4c3a95;box-shadow:0 0 0 6px var(--shell),0 30px 90px #5b2fe055,inset 0 0 60px #2a167033}
+@media(max-width:480px){.phone{width:100vw;height:100dvh;border-radius:0;border:0;box-shadow:none}}
+
+.screen{position:absolute;inset:0;padding:22px 20px 0;display:none;flex-direction:column;background:var(--bg);animation:fade .25s ease}
+.screen.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.screen.has-nav{padding-bottom:78px}
+.scroll{flex:1;overflow-y:auto;padding-bottom:20px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.scroll.nopad{margin:0 -20px}
+.pad{padding:0 20px}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:6px 0 12px;gap:8px}
+.topbar h3{font-size:19px;flex:1}
+.logo-text{letter-spacing:2px;font-weight:800}
+.top-actions{display:flex;gap:6px}
+.topbar button,.top-actions button{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;position:relative;flex:none}
+.topbar button:hover{background:var(--card2)}
+.topbar .txt{width:auto;padding:0 14px;border-radius:18px;background:linear-gradient(90deg,#a78bfa,#7c3aed);color:#fff;font-weight:600;font-size:14px;height:34px}
+.topbar .txt:disabled{opacity:.5}
+i[data-icon]{display:inline-grid;place-items:center;width:20px;height:20px}
+i[data-icon] svg,.actions svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.actions svg{width:20px;height:20px}
+.dot{position:absolute;top:4px;right:4px;width:8px;height:8px;border-radius:50%;background:#f43f5e;border:2px solid var(--bg)}
+.nbadge{position:absolute;top:-2px;right:-2px;min-width:16px;height:16px;border-radius:8px;background:#f43f5e;color:#fff;font-size:10px;font-weight:700;display:grid;place-items:center;padding:0 4px}
+
+.btn{display:block;width:100%;padding:14px;border-radius:14px;font-weight:600;font-size:15px;transition:.2s;text-align:center}
+.btn.primary{background:linear-gradient(90deg,#a78bfa,#7c3aed);box-shadow:0 8px 24px #7c3aed55;color:#fff}
+.btn.primary:active{transform:scale(.98)}
+.btn.primary:disabled{opacity:.6}
+.btn.outline{border:1.5px solid var(--p);background:color-mix(in srgb,var(--bg) 50%,transparent)}
+.btn.dark{background:var(--card2);padding:10px;font-size:14px}
+.btn.danger{background:#e11d48;color:#fff}
+.btn.light{background:#fff;color:#2b1470;width:auto;padding:8px 22px;border-radius:20px;font-size:13px}
+.btn.sq{width:44px;flex:none}
+.btn.ghost{background:var(--card);border:1px solid var(--line);font-weight:500;margin-top:16px}
+.btn.ghost:hover{border-color:var(--p)}
+.msg .react{position:absolute;right:8px;bottom:-10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 5px;font-size:12px}
+.msg{position:relative}.msg[data-mid]{cursor:pointer}
+.msg .quote{display:block;font-size:11px;opacity:.75;border-left:3px solid var(--p2);padding:2px 6px;margin-bottom:4px;border-radius:4px;background:#0003;max-height:34px;overflow:hidden}
+.replybar{display:flex;align-items:center;gap:8px;padding:6px 10px;font-size:12px;background:var(--card2);border-radius:10px;margin-top:6px}
+.replybar span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aiout{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:14px;margin:10px 0;white-space:pre-wrap}
+.poll{position:absolute;left:16px;right:16px;bottom:28px;z-index:4;display:grid;gap:8px}
+.poll button{position:relative;overflow:hidden;background:#fff;color:#1b1238;border-radius:12px;padding:12px;font-weight:600;text-align:left}
+.poll button i{position:absolute;left:0;top:0;bottom:0;background:#c4b5fd;z-index:0}
+.poll button span{position:relative;z-index:1;display:flex;justify-content:space-between}
+.live{position:absolute;inset:0;z-index:80;background:linear-gradient(160deg,#1b0b4a,#6d28d9 60%,#db2777);color:#fff;display:flex;flex-direction:column;padding:20px}
+.live .lh{display:flex;gap:8px;align-items:center}.live .lh b{background:#e11d48;padding:3px 10px;border-radius:8px;font-size:12px}
+.live .lc{flex:1;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;font-size:13px;scrollbar-width:none}
+.live .lc p{background:#0005;padding:6px 10px;border-radius:12px;align-self:flex-start;max-width:85%}
+.live .lf{display:flex;gap:10px}.live .lf button{flex:1;padding:12px;border-radius:14px;background:#fff3;font-weight:600}
+.live .lf .end{background:#e11d48}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0}.stat-grid div{background:var(--card2);border-radius:12px;padding:12px}.stat-grid b{font-size:20px;display:block}
+.offbar{position:absolute;top:0;left:0;right:0;z-index:95;background:#f59e0b;color:#1b1238;font-size:12px;font-weight:600;text-align:center;padding:6px 10px;transform:translateY(-100%);transition:transform .25s}
+.offbar.show{transform:none}.offbar.ok{background:#34d399}
+.ptr{display:flex;align-items:center;justify-content:center;height:0;overflow:hidden;font-size:12px;color:var(--muted)}
+.hist{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:-4px 0 12px}
+.hist .hh{display:flex;justify-content:space-between;align-items:center;margin:2px 0 6px}
+.hist .chips{flex-wrap:wrap;padding-bottom:4px}.hist .chip button{margin-left:6px;color:var(--muted)}
+.btn.google{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:#1f1f1f;font-weight:600;border:1px solid #dadce0}
+.btn.google:active{transform:scale(.98)}
+.btn.google:disabled{opacity:.6}
+.btn.google svg{width:20px;height:20px;flex:none}
+.btn.sm{padding:7px 16px;font-size:13px;width:auto;border-radius:18px}
+.grow{flex:1}
+.row-gap{display:flex;gap:10px;margin:14px 0}
+.row-between{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}
+.link{color:var(--p2);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.sec{margin:16px 0 6px;font-size:14px}
+.field{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 14px;height:48px;margin-bottom:12px;color:var(--muted)}
+.field input{color:var(--text);font-size:14px}
+.field:focus-within{border-color:var(--p)}
+.field.search{height:42px;border-radius:12px}
+.field.search button{color:var(--muted)}
+.in{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px;width:100%;color:var(--text);margin-bottom:10px;font-size:14px;display:block}
+.in:focus{border-color:var(--p)}
+textarea.in{min-height:90px;resize:none}
+select.in option{background:var(--card);color:var(--text)}
+.pin{text-align:center;letter-spacing:12px;font-size:22px}
+.lbl{font-size:12px;color:var(--muted);margin:6px 2px 4px;display:block}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 15px;border-radius:20px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.chip.on{background:linear-gradient(90deg,#7c3aed,#8b5cf6);color:#fff;border-color:transparent}
+.chip.tag{color:var(--p2)}
+.tabs .chip{background:none;border:0;border-bottom:2px solid transparent;border-radius:0;padding:8px 12px}
+.tabs .chip.on{background:none;color:var(--p2);border-bottom-color:var(--p)}
+.tabs{border-bottom:1px solid var(--line);margin-bottom:12px}
+.avatar{border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:none;width:44px;height:44px;border:2px solid var(--p);overflow:hidden;position:relative}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar.sm{width:38px;height:38px;font-size:14px}
+.avatar.md{width:56px;height:56px;font-size:20px}
+.avatar.xl{width:84px;height:84px;font-size:32px;border:3px solid var(--bg)}
+.avatar.sq{border-radius:14px;border:0;font-size:22px;width:46px;height:46px}
+.av-1{background:linear-gradient(135deg,#f472b6,#7c3aed)}.av-2{background:linear-gradient(135deg,#60a5fa,#6d28d9)}
+.av-3{background:linear-gradient(135deg,#34d399,#2563eb)}.av-4{background:linear-gradient(135deg,#fbbf24,#db2777)}
+.av-5{background:linear-gradient(135deg,#a78bfa,#0ea5e9)}.av-6{background:linear-gradient(135deg,#fb7185,#f59e0b)}
+.av-ai{background:linear-gradient(135deg,#22d3ee,#7c3aed);font-size:20px}
+.back{font-size:28px;line-height:1;width:36px;height:36px;margin-bottom:8px;text-align:left;display:block}
+.topbar .back{margin:0;text-align:center}
+.back.float{position:absolute;top:16px;left:14px;z-index:5;background:#0008;border-radius:50%;text-align:center;color:#fff}
+.error{color:var(--red);font-size:12px;margin:-4px 0 10px}
+.crown-sm{font-size:12px}
+.empty,.empty-state{text-align:center;color:var(--muted);padding:30px 0;font-size:13px;grid-column:1/-1}
+.empty-state{padding:34px 16px;display:flex;flex-direction:column;gap:6px;border:1px dashed var(--line);border-radius:16px;margin:8px 0;align-items:center}
+.empty-state b{color:var(--text);font-size:14px}.empty-state span{font-size:12px}
+.empty-state .btn{margin-top:10px}
+.divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:14px 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* splash, login, register */
+.splash{padding-bottom:36px;background:radial-gradient(500px 400px at 50% 55%,#4c1fb0 0,transparent 65%),var(--bg)}
+.splash-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.brand{font-size:44px;letter-spacing:6px;font-weight:800}
+.tag-line{letter-spacing:4px;font-size:11px;color:var(--muted)}
+.splash-actions{display:grid;gap:12px}
+.splash-actions .link{padding:6px 0}
+.login,.register{padding-top:28px;overflow-y:auto;scrollbar-width:none}
+.login::-webkit-scrollbar,.register::-webkit-scrollbar{display:none}
+.welcome{font-size:22px;font-weight:500;line-height:1.3;margin:20px 0 6px}
+.welcome b{font-size:26px;font-weight:800}
+.login form{margin-top:22px}.register form{margin-top:18px}.register .field{margin-bottom:10px}
+.eye{color:var(--muted);width:auto}
+.login .link.center{margin:14px 0 8px}
+.at{width:20px;text-align:center;font-weight:700;color:var(--muted)}
+.terms{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin:4px 0 12px}
+.terms input{width:18px;height:18px;accent-color:var(--p);flex:none}
+.foot-note{margin-top:auto;padding-bottom:28px}
+.register .foot-note{margin-top:18px;padding-bottom:24px}
+
+/* stories */
+.stories{display:flex;gap:14px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
+.story{flex:none;text-align:center;font-size:11px;width:64px;color:var(--muted);cursor:pointer}
+.ring{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 4px;position:relative}
+.ring.new{background:linear-gradient(135deg,#f472b6,#8b5cf6,#38bdf8)}
+.ring.seen{background:var(--line)}
+.ring.none{background:none}
+.ring .avatar{border:3px solid var(--bg)}
+.story-plus{position:absolute;right:-2px;bottom:-2px;width:20px;height:20px;border-radius:50%;background:var(--p);color:#fff;font-size:14px;line-height:1;display:grid;place-items:center;border:2px solid var(--bg)}
+.story-view{position:absolute;inset:0;background:#000;z-index:70;display:flex;flex-direction:column;color:#fff}
+.sv-bars{display:flex;gap:4px;padding:14px 12px 6px}
+.sv-bars i{flex:1;height:3px;background:#fff4;border-radius:3px;overflow:hidden}
+.sv-bars i b{display:block;height:100%;width:0;background:#fff}
+.sv-bars i.done b{width:100%}
+.sv-bars i.run b{animation:fill 5s linear forwards}
+@keyframes fill{to{width:100%}}
+.sv-head{display:flex;align-items:center;gap:10px;padding:6px 14px}
+.sv-head b{font-size:14px;display:block}.sv-head span{font-size:11px;opacity:.7}
+.sv-head .x{margin-left:auto;font-size:22px;width:36px;height:36px}
+.sv-body{flex:1;position:relative;display:grid;place-items:center;overflow:hidden}
+.sv-body img{width:100%;height:100%;object-fit:contain}
+.sv-text{padding:30px;font-size:24px;font-weight:700;text-align:center;line-height:1.3;word-break:break-word}
+.sv-tap{position:absolute;top:0;bottom:0;width:35%}
+.sv-tap.l{left:0}.sv-tap.r{right:0;width:65%}
+.bgpick{display:flex;gap:8px;margin-bottom:10px}
+.bgpick button{width:34px;height:34px;border-radius:50%;border:2px solid transparent}
+.bgpick button.on{border-color:var(--text)}
+
+/* posts */
+.post{padding:14px 0;border-bottom:1px solid #ffffff10}
+[data-theme="light"] .post{border-color:var(--line)}
+.post-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer}
+.post-head b{font-size:14px;display:block}.post-head span{font-size:11px;color:var(--muted)}
+.post-head .more{margin-left:auto;color:var(--muted);width:32px;height:32px;font-size:18px}
+.post p{font-size:14px;margin-bottom:10px;line-height:1.45;word-break:break-word}
+.tag{color:var(--p2);cursor:pointer}
+.post-img{border-radius:14px;overflow:hidden;max-height:420px;background:#000;display:flex;justify-content:center}
+.post-img img,.post-img video{width:100%;max-height:420px;object-fit:cover;display:block}
+.actions{display:flex;gap:22px;margin-top:10px;color:var(--muted);font-size:13px;align-items:center}
+.actions button{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.actions button.push{margin-left:auto}
+.actions button.liked{color:#f472b6}.actions button.liked svg{fill:#f472b6}
+.actions button.saved{color:var(--p2)}.actions button.saved svg{fill:var(--p2)}
+.cmt{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.cmt .avatar{width:34px;height:34px;font-size:13px}
+.cmt b{font-size:13px}.cmt span{font-size:11px;color:var(--muted);margin-left:6px}
+.cmt p{font-size:13px;margin-top:2px;word-break:break-word}
+.cmt .del{margin-left:auto;color:var(--muted);font-size:12px;align-self:flex-start}
+.cbar{display:flex;gap:8px;padding:8px 0 12px;align-items:center}
+.cbar .field{flex:1;margin:0;height:42px}
+.cbar button.send{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#6d28d9);color:#fff;display:grid;place-items:center}
+
+/* explore */
+.feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
+.feat-grid button{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;color:var(--muted);padding:10px 2px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.feat-grid span{font-size:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border-radius:14px;overflow:hidden;position:relative;height:150px;cursor:pointer;background:var(--card)}
+.tile:nth-child(4n+1),.tile:nth-child(4n+2){height:185px}
+.tile img,.tile video{width:100%;height:100%;object-fit:cover;display:block}
+.tile .meta{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;background:linear-gradient(transparent,#000c);font-size:12px;color:#fff}
+.ttile{padding:14px;font-size:13px;line-height:1.4;height:100%;background:linear-gradient(135deg,#3b1d96,#6d3df0);color:#fff;overflow:hidden;word-break:break-word}
+.play{position:absolute;top:8px;right:8px;background:#0009;color:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:10px}
+.creators{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none}
+.creators>div{flex:none;text-align:center;font-size:12px;width:64px;cursor:pointer}
+.creators .avatar{margin:0 auto 4px;width:58px;height:58px}
+.urow{display:flex;align-items:center;gap:12px;padding:9px 0}
+.urow .meta{flex:1;min-width:0;cursor:pointer}.urow b{font-size:14px;display:block}.urow span{font-size:12px;color:var(--muted)}
+.fbtn{padding:7px 18px;border-radius:18px;background:var(--p3);font-size:13px;font-weight:600;color:#fff}
+.fbtn.on{background:var(--card2);color:var(--p2);border:1px solid var(--p)}
+
+/* chat */
+.chat-item{display:flex;align-items:center;gap:12px;padding:11px 0;cursor:pointer;border-radius:12px}
+.chat-item:hover{background:#ffffff08}
+.chat-item .meta{flex:1;min-width:0}
+.chat-item b{font-size:14px;display:flex;justify-content:space-between}
+.chat-item b em{font-style:normal;font-weight:400;font-size:11px;color:var(--muted)}
+.chat-item p{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;justify-content:space-between;align-items:center}
+.badge{background:var(--p);color:#fff;border-radius:50%;min-width:18px;height:18px;font-size:10px;display:grid;place-items:center;font-weight:700;padding:0 4px}
+.fab{position:absolute;right:20px;bottom:94px;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#6d28d9);display:grid;place-items:center;box-shadow:0 8px 20px #7c3aed77;z-index:10;color:#fff}
+.convo{padding-bottom:10px}
+.cv-head{display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;min-width:0}
+.cv-head b{display:block;font-size:15px}.cv-head span{font-size:11px;color:var(--muted)}
+.msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding:8px 0;scrollbar-width:none}
+.msgs::-webkit-scrollbar{display:none}
+.msg{max-width:78%;padding:9px 13px;border-radius:16px;font-size:14px;line-height:1.35;white-space:pre-wrap;word-break:break-word}
+.msg.me{align-self:flex-end;background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;border-bottom-right-radius:4px}
+.msg.them{align-self:flex-start;background:var(--card2);border-bottom-left-radius:4px}
+.msg small{display:block;font-size:10px;opacity:.65;margin-top:3px}
+.msg.sticker{background:none;font-size:56px;padding:0;line-height:1.1}
+.composer{display:flex;gap:8px;align-items:center;padding-top:8px}
+.composer .field{flex:1;margin:0;height:44px}
+.composer .rb{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--card);border:1px solid var(--line);font-size:20px}
+.composer .rb.send{background:linear-gradient(135deg,#a78bfa,#6d28d9);color:#fff;border:0}
+.aichips{display:flex;gap:8px;overflow-x:auto;padding-top:6px;scrollbar-width:none}
+.aichips button{flex:none;font-size:12px;padding:6px 12px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--p2)}
+.stickers{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.stickers button{font-size:34px;padding:6px;border-radius:12px}
+.stickers button:hover{background:var(--card2)}
+
+/* community */
+.com-item{display:flex;align-items:center;gap:12px;padding:10px 0;cursor:pointer}
+.com-item .meta{flex:1;min-width:0}.com-item b{font-size:14px;display:block}.com-item span{font-size:12px;color:var(--muted)}
+.join{padding:7px 18px;border-radius:18px;background:var(--p3);font-size:13px;font-weight:600;color:#fff}
+.join.joined{background:var(--card2);color:var(--p2);border:1px solid var(--p)}
+.create-com{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding:14px;border-radius:16px;background:linear-gradient(90deg,#6d3df0,#8b5cf6);color:#fff}
+.create-com p{opacity:.85;margin-top:2px}
+.cd-head{text-align:center;padding:6px 0 10px}
+.cd-head .emoji{font-size:44px}.cd-head h2{margin-top:4px}
+.emojis{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.emojis button{font-size:24px;width:42px;height:42px;border-radius:12px;background:var(--card2);border:2px solid transparent}
+.emojis button.on{border-color:var(--p)}
+
+/* profile */
+.cover{height:190px;position:relative;margin-bottom:-42px;overflow:hidden}
+.cover-bg{width:100%;height:100%;background:linear-gradient(135deg,#2b1665,#6d3df0 60%,#a78bfa)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover-actions{position:absolute;top:16px;right:14px;display:flex;gap:8px;z-index:5}
+.cover-actions button{width:34px;height:34px;border-radius:50%;background:#0008;display:grid;place-items:center;color:#fff}
+.pf-name{font-size:20px;margin-top:8px}
+.bio{margin-top:6px;font-size:14px;word-break:break-word}
+.stats3{display:flex;justify-content:space-around;margin:16px 0 4px;text-align:center}
+.stats3>div{cursor:pointer}
+.stats3 b{display:block;font-size:18px}.stats3 span{font-size:12px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.cell{aspect-ratio:1;overflow:hidden;border-radius:6px;position:relative;cursor:pointer;background:var(--card)}
+.cell img,.cell video{width:100%;height:100%;object-fit:cover;display:block}
+.cell .ttile{font-size:11px;padding:8px}
+.pick{position:relative;display:inline-block}
+.pick .avatar{width:84px;height:84px;font-size:30px}
+.pick .cam{position:absolute;right:-4px;bottom:-4px;width:28px;height:28px;border-radius:50%;background:var(--p);display:grid;place-items:center;font-size:14px}
+.coverpick{height:110px;border-radius:14px;overflow:hidden;position:relative;margin-bottom:14px;cursor:pointer}
+.coverpick span{position:absolute;right:8px;bottom:8px;background:#000a;color:#fff;font-size:12px;padding:4px 10px;border-radius:12px}
+
+/* studio */
+.big-stat{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.big-stat .num{display:block;font-size:30px;margin:2px 0}
+.up{color:var(--green);font-size:12px}.up.down{color:var(--red)}
+.spark{width:55%;height:80px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}
+.stat span{font-size:11px;color:var(--muted);display:block}.stat b{font-size:17px;display:block;margin:2px 0}.stat em{font-style:normal;font-size:11px;color:var(--green)}
+.best{display:flex;gap:12px;align-items:center;padding:8px 0;cursor:pointer}
+.best .thumb{width:62px;height:56px;border-radius:10px;overflow:hidden;flex:none;background:linear-gradient(135deg,#3b1d96,#6d3df0);display:grid;place-items:center;font-size:20px}
+.best .thumb img,.best .thumb video{width:100%;height:100%;object-fit:cover}
+.best b{font-size:13px;display:block;word-break:break-word}.best span{font-size:11px;color:var(--muted)}
+
+/* settings, security */
+.set-item{display:flex;align-items:center;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line);cursor:pointer;width:100%;text-align:left}
+.set-item:hover{background:#ffffff08}
+.set-item b{display:block;font-size:14px;font-weight:600}.set-item span{font-size:12px;color:var(--muted)}
+.set-item .ic{width:26px;color:var(--text);display:grid;place-items:center;font-size:18px}
+.set-item .arr{margin-left:auto;color:var(--muted);font-size:18px}
+.premium-banner{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,#3b1d96,#6d3df0);margin-bottom:8px;cursor:pointer;color:#fff}
+.premium-banner span{font-size:24px}.premium-banner div{flex:1}.premium-banner p{opacity:.8}
+.switch{position:relative;width:44px;height:26px;background:var(--line);border-radius:20px;flex:none;margin-left:auto;display:block;transition:.2s}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}
+.switch.on{background:var(--p)}.switch.on::after{transform:translateX(18px)}
+.sw-row{display:flex;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line);cursor:pointer;font-size:15px;gap:10px}
+.radio-row{display:flex;align-items:center;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--line);cursor:pointer;font-size:15px}
+.radio-row.on{color:var(--p2);font-weight:600}
+
+/* premium */
+.premium{background:radial-gradient(500px 360px at 50% 18%,#6d3df055 0,transparent 70%),var(--bg);padding-top:28px;padding-bottom:30px;overflow-y:auto}
+.crown{font-size:76px;text-align:center;margin-top:10px;filter:drop-shadow(0 0 22px #fbbf24aa)}
+.premium h2{font-size:22px;margin:8px 0}
+.perks{margin:22px 4px;display:grid;gap:16px;flex:1}
+.perks li{display:flex;align-items:center;gap:14px;font-size:15px}
+.perks .ck{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;border:1.5px solid var(--line);font-size:13px}
+.perks li.on .ck{background:#fbbf24;border-color:#fbbf24;color:#3b1d00}
+.premium .btn{margin-bottom:12px}
+
+/* notifs */
+.notif{display:flex;gap:12px;align-items:center;padding:12px 8px;border-radius:12px;cursor:pointer}
+.notif.unread{background:color-mix(in srgb,var(--p) 14%,transparent)}
+.notif .t{font-size:13px;line-height:1.35;word-break:break-word}.notif small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+
+/* videos */
+.videos{padding:0}
+.vfeed{position:absolute;inset:0;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;background:#000}
+.vfeed::-webkit-scrollbar{display:none}
+.vitem{height:100%;scroll-snap-align:start;position:relative;background:#000;color:#fff}
+.vitem video{width:100%;height:100%;object-fit:cover;display:block}
+.vrail{position:absolute;right:12px;bottom:120px;display:flex;flex-direction:column;gap:18px;align-items:center}
+.vrail button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;color:#fff;text-shadow:0 1px 4px #000}
+.vrail svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 3px #000)}
+.vrail button.liked svg{fill:#f472b6;stroke:#f472b6}.vrail button.saved svg{fill:#fff}
+.vinfo{position:absolute;left:16px;right:76px;bottom:92px;text-shadow:0 1px 6px #000;font-size:14px}
+.vinfo b{display:block;margin-bottom:4px;cursor:pointer}
+.vtop{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;z-index:5;color:#fff;font-weight:700;text-shadow:0 1px 4px #000}
+.vtop button{width:36px;height:36px;border-radius:50%;background:#0007;font-size:16px}
+.vempty{position:absolute;inset:0;display:grid;place-items:center;padding:30px;background:var(--bg)}
+
+/* market */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer}
+.pimg{height:120px;background:linear-gradient(135deg,#3b1d96,#6d3df0);display:grid;place-items:center;font-size:34px}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pcard .pi{padding:8px 10px}.pcard b{font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcard .price{color:var(--p2);font-weight:700;font-size:13px}.pcard span{font-size:11px;color:var(--muted)}
+.cart-row{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.cart-row .pimg{width:52px;height:52px;border-radius:10px;font-size:20px;flex:none}
+.cart-row .meta{flex:1;min-width:0}.cart-row b{font-size:13px;display:block}.cart-row span{font-size:12px;color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:26px;height:26px;border-radius:50%;background:var(--card2);font-weight:700}
+.total{display:flex;justify-content:space-between;font-weight:700;margin:12px 0 4px}
+
+/* compose */
+.compose-text{min-height:130px;resize:none;font-size:16px;line-height:1.4;margin-top:6px}
+.cpreview{border-radius:14px;overflow:hidden;margin:10px 0;position:relative;background:#000}
+.cpreview img,.cpreview video{width:100%;max-height:300px;object-fit:contain;display:block}
+.cpreview button{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;background:#000a;color:#fff}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.tools button{padding:9px 14px;border-radius:20px;background:var(--card);border:1px solid var(--line);font-size:13px}
+
+/* nav, sheet, toast */
+.nav{position:absolute;left:0;right:0;bottom:0;height:70px;padding:0 10px 8px;display:none;align-items:center;justify-content:space-around;background:linear-gradient(transparent,var(--bg) 25%);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:20}
+.nav.show{display:flex}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:var(--muted);position:relative;width:56px}
+.nav button.active{color:var(--p2)}
+.nav .plus{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#6d28d9);color:#fff;justify-content:center;box-shadow:0 6px 18px #7c3aed88}
+.nav .dot{top:-1px;right:16px}
+.sheet-bg{position:absolute;inset:0;background:#000a;z-index:80}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--card);border-radius:24px 24px 0 0;padding:10px 20px 26px;z-index:81;animation:up .25s ease;max-height:86%;overflow-y:auto;scrollbar-width:none}
+.sheet::-webkit-scrollbar{display:none}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.handle{width:40px;height:4px;background:var(--line);border-radius:4px;margin:0 auto 14px}
+.sheet h4{margin-bottom:8px;font-size:16px}
+.sheet-item{display:flex;align-items:center;gap:14px;width:100%;padding:14px 4px;font-size:15px;border-bottom:1px solid var(--line);text-align:left}
+.sheet-item.danger{color:var(--red)}
+.faq b{display:block;margin-top:12px;font-size:14px}.faq p{font-size:13px;color:var(--muted);margin-top:2px}
+.toast{position:absolute;left:50%;bottom:92px;transform:translate(-50%,20px);background:var(--card2);border:1px solid var(--p);padding:10px 18px;border-radius:20px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:90;max-width:90%;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <div class="side-logo"><span class="k-mark"></span> KYNEX</div>
+  <p>Lompat ke layar:</p>
+  <div id="sideLinks"></div>
+</aside>
+
+<main class="phone" id="phone">
+
+  <!-- SPLASH -->
+  <section class="screen splash" data-screen="splash">
+    <div class="splash-center">
+      <span class="k-mark big"></span>
+      <h1 class="brand">KYNEX</h1>
+      <p class="tag-line">CONNECT YOUR WORLD.</p>
+    </div>
+    <div class="splash-actions">
+      <button class="btn primary" data-go="register">Get Started</button>
+      <button class="btn outline" data-go="login">Masuk</button>
+      <a class="link center" href="#" data-guest>Lanjut sebagai Tamu</a>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <section class="screen login" data-screen="login">
+    <button class="back" data-go="splash" aria-label="Kembali">‹</button>
+    <h2 class="welcome">Selamat Datang di<br><b>KYNEX</b></h2>
+    <p class="muted small">Masuk untuk melanjutkan perjalananmu</p>
+    <form id="loginForm" autocomplete="off">
+      <label class="field"><i data-icon="mail"></i><input id="user" type="text" placeholder="Email atau Username"></label>
+      <label class="field"><i data-icon="lock"></i><input id="pass" type="password" placeholder="Password">
+        <button type="button" class="eye" id="eye" aria-label="Tampilkan password"><i data-icon="eye"></i></button></label>
+      <p class="error" id="loginError" hidden></p>
+      <button class="btn primary" type="submit">Masuk</button>
+    </form>
+    <a class="link center" href="#" data-act="forgot">Lupa password?</a>
+    <div class="divider">atau masuk dengan</div>
+    <button class="btn google" type="button" data-act="google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg><span>Lanjutkan dengan Google</span></button>
+    <button class="btn ghost" data-guest>Masuk sebagai Tamu</button>
+    <p class="center small foot-note">Belum punya akun? <a class="link" href="#" data-go="register">Daftar</a></p>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="screen register" data-screen="register">
+    <button class="back" data-go="login" aria-label="Kembali">‹</button>
+    <h2 class="welcome">Buat Akun<br><b>KYNEX</b></h2>
+    <p class="muted small">Gabung dan mulai terhubung dengan duniamu</p>
+    <form id="regForm" autocomplete="off" novalidate>
+      <label class="field"><i data-icon="user"></i><input id="regName" type="text" placeholder="Nama lengkap"></label>
+      <label class="field"><span class="at">@</span><input id="regUser" type="text" placeholder="Username"></label>
+      <label class="field"><i data-icon="mail"></i><input id="regEmail" type="email" placeholder="Email"></label>
+      <label class="field"><i data-icon="lock"></i><input id="regPass" type="password" placeholder="Password (min. 6 karakter)">
+        <button type="button" class="eye" id="regEye" aria-label="Tampilkan password"><i data-icon="eye"></i></button></label>
+      <label class="field"><i data-icon="lock"></i><input id="regPass2" type="password" placeholder="Konfirmasi password"></label>
+      <label class="terms"><input type="checkbox" id="regTerms"><span>Saya setuju dengan Syarat &amp; Ketentuan</span></label>
+      <p class="error" id="regError" hidden></p>
+      <button class="btn primary" type="submit">Daftar</button>
+    </form>
+    <div class="divider">atau daftar dengan</div>
+    <button class="btn google" type="button" data-act="google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg><span>Daftar dengan Google</span></button>
+    <button class="btn ghost" data-guest>Masuk sebagai Tamu</button>
+    <p class="center small foot-note">Sudah punya akun? <a class="link" href="#" data-go="login">Masuk</a></p>
+  </section>
+
+  <!-- HOME -->
+  <section class="screen has-nav" data-screen="home">
+    <header class="topbar">
+      <h3 class="logo-text">KYNEX</h3>
+      <div class="top-actions">
+        <button data-go="explore" aria-label="Cari"><i data-icon="search"></i></button>
+        <button data-go="notifs" aria-label="Notifikasi"><i data-icon="bell"></i><em class="dot" id="bellDot" hidden></em></button>
+      </div>
+    </header>
+    <div class="scroll">
+      <div class="stories" id="stories"></div>
+      <div class="chips" id="feedChips"></div>
+      <div id="feed"></div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section class="screen has-nav" data-screen="explore">
+    <div class="scroll">
+      <label class="field search"><i data-icon="search"></i><input id="exSearch" type="text" placeholder="Cari orang, postingan, #hashtag..."><button type="button" id="exClear" aria-label="Hapus">✕</button></label>
+      <div class="feat-grid">
+        <button data-go="community"><span>👥</span>Komunitas</button>
+        <button data-go="videos"><span>🎬</span>Video</button>
+        <button data-go="market"><span>🛍️</span>Marketplace</button>
+        <button data-act="openai"><span>🤖</span>Asisten AI</button>
+        <button data-go="notifs"><span>🔔</span>Notifikasi</button>
+      </div>
+      <div id="exDefault">
+        <div class="chips" id="exChips"></div>
+        <div class="grid2" id="exGrid"></div>
+        <h4 class="sec">Hashtag Trending</h4>
+        <div class="chips" id="hashChips"></div>
+        <h4 class="sec">Top Creator</h4>
+        <div class="creators" id="creators"></div>
+      </div>
+      <div id="exResults" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- CHAT LIST -->
+  <section class="screen has-nav" data-screen="chat">
+    <header class="topbar"><h3>Pesan</h3></header>
+    <div class="scroll">
+      <label class="field search"><i data-icon="search"></i><input id="chatSearch" type="text" placeholder="Cari pesan..."></label>
+      <div class="chips" id="chatChips"></div>
+      <div id="chatList"></div>
+    </div>
+    <button class="fab" data-act="newchat" aria-label="Pesan baru"><i data-icon="edit"></i></button>
+  </section>
+
+  <!-- CONVERSATION -->
+  <section class="screen convo" data-screen="convo">
+    <header class="topbar">
+      <button class="back" data-back aria-label="Kembali">‹</button>
+      <div class="cv-head" id="cvHead"><span id="cvAvatar"></span><div><b id="cvName"></b><span id="cvSub"></span></div></div>
+    </header>
+    <div class="msgs" id="msgs"></div>
+    <div class="aichips" id="aiChips">
+      <button data-ai="caption liburan">caption liburan</button>
+      <button data-ai="hashtag kuliner">hashtag kuliner</button>
+      <button data-ai="ide konten">ide konten</button>
+      <button data-ai="ringkas ">ringkas …</button>
+      <button data-ai="bantuan">bantuan</button>
+    </div>
+    <div class="composer">
+      <button class="rb" id="stickerBtn" aria-label="Stiker">😊</button>
+      <label class="field"><input id="msgInput" type="text" placeholder="Tulis pesan..." autocomplete="off"></label>
+      <button class="rb send" id="msgSend" aria-label="Kirim"><i data-icon="send"></i></button>
+    </div>
+  </section>
+
+  <!-- COMMUNITY LIST -->
+  <section class="screen has-nav" data-screen="community">
+    <header class="topbar"><h3>Komunitas</h3></header>
+    <div class="scroll">
+      <label class="field search"><i data-icon="search"></i><input id="comSearch" type="text" placeholder="Cari komunitas..."></label>
+      <div class="chips" id="comChips"></div>
+      <div id="comList"></div>
+      <div class="create-com">
+        <div><b>Buat Komunitasmu</b><p class="small">Kumpulkan orang-orang dengan minat yang sama!</p></div>
+        <button class="btn light" data-act="newcom">Buat</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY DETAIL -->
+  <section class="screen has-nav" data-screen="cdetail">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3 id="cdTitle"></h3><button data-act="commenu" aria-label="Menu">⋯</button></header>
+    <div class="scroll" id="cdBox"></div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="screen has-nav profile" data-screen="profile">
+    <div class="scroll nopad" id="profileBox"></div>
+  </section>
+
+  <!-- EDIT PROFILE -->
+  <section class="screen" data-screen="editprofile">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Edit Profil</h3><button class="txt" id="epSave">Simpan</button></header>
+    <div class="scroll">
+      <div class="coverpick" id="epCover" data-act="pickcover"><div class="cover-bg"></div><span>Ganti sampul</span></div>
+      <div style="text-align:center;margin-bottom:14px"><div class="pick" data-act="pickavatar"><span id="epAv"></span><em class="cam">📷</em></div></div>
+      <label class="lbl">Nama lengkap</label><input class="in" id="epName" type="text" maxlength="40">
+      <label class="lbl">Username</label><input class="in" id="epUser" type="text" maxlength="24">
+      <label class="lbl">Bio</label><textarea class="in" id="epBio" maxlength="160"></textarea>
+      <p class="error" id="epErr" hidden></p>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="screen has-nav" data-screen="studio">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Creator Studio</h3></header>
+    <div class="scroll">
+      <div class="chips tabs" id="stTabs"></div>
+      <div class="card big-stat">
+        <div><span class="muted small" id="bigLabel"></span><b class="num" id="bigNum">0</b><span class="up" id="bigUp">0%</span></div>
+        <svg viewBox="0 0 160 70" class="spark"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".5"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient></defs><path id="sparkArea" fill="url(#sg)"/><path id="sparkLine" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="grid3" id="stStats"></div>
+      <h4 class="sec" id="stListTitle"></h4>
+      <div id="stList"></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="screen has-nav" data-screen="settings">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Pengaturan</h3></header>
+    <div class="scroll">
+      <label class="field search"><i data-icon="search"></i><input id="setSearch" type="text" placeholder="Cari pengaturan..."></label>
+      <div class="premium-banner" data-go="premium"><span>👑</span><div><b>KYNEX Premium</b><p class="small">Nikmati fitur eksklusif</p></div><i>›</i></div>
+      <div id="setList"></div>
+      <button class="btn outline" id="logout" style="margin-top:16px">Keluar</button>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="screen has-nav" data-screen="security">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Privasi &amp; Keamanan</h3></header>
+    <div class="scroll" id="secList"></div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="screen premium" data-screen="premium">
+    <button class="back" data-back aria-label="Kembali">‹</button>
+    <div class="crown">👑</div>
+    <h2 class="center">KYNEX Premium</h2>
+    <p class="center muted small">Nikmati pengalaman lebih<br>lengkap dan eksklusif</p>
+    <ul class="perks" id="perks"></ul>
+    <button class="btn primary" id="upgrade">Upgrade Sekarang</button>
+    <a class="link center small" href="#" id="cancelPrem" hidden>Batalkan Premium</a>
+    <p class="center muted small" id="premNote">Simulasi: tidak ada pembayaran sungguhan.</p>
+  </section>
+
+  <!-- NOTIFS -->
+  <section class="screen has-nav" data-screen="notifs">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Notifikasi</h3><button data-act="clearnotifs" aria-label="Hapus semua"><i data-icon="trash"></i></button></header>
+    <div class="scroll" id="notifList"></div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="screen has-nav videos" data-screen="videos">
+    <div class="vtop"><span>Video</span><button id="muteBtn" aria-label="Suara">🔇</button></div>
+    <div class="vfeed" id="vfeed"></div>
+  </section>
+
+  <!-- MARKET -->
+  <section class="screen has-nav" data-screen="market">
+    <header class="topbar"><h3>Marketplace</h3>
+      <button data-act="sell" aria-label="Jual"><i data-icon="plus"></i></button>
+      <button data-act="cart" aria-label="Keranjang"><i data-icon="cart"></i><em class="nbadge" id="cartBadge" hidden>0</em></button>
+    </header>
+    <div class="scroll">
+      <label class="field search"><i data-icon="search"></i><input id="mkSearch" type="text" placeholder="Cari produk..."></label>
+      <div class="pgrid" id="mkGrid"></div>
+    </div>
+  </section>
+
+  <!-- COMPOSE -->
+  <section class="screen" data-screen="compose">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Buat Postingan</h3><button class="txt" id="cPost">Posting</button></header>
+    <div class="scroll">
+      <textarea class="in compose-text" id="cText" placeholder="Apa yang sedang kamu pikirkan? Pakai #hashtag ya" maxlength="1000"></textarea>
+      <div class="cpreview" id="cPreview" hidden></div>
+      <div class="tools"><button id="cMedia">📷 Foto/Video</button><button id="cCap">✨ Saran Caption</button></div>
+      <label class="lbl">Komunitas</label>
+      <select class="in" id="cCom"></select>
+    </div>
+  </section>
+
+  <!-- POST DETAIL -->
+  <section class="screen" data-screen="post">
+    <header class="topbar"><button class="back" data-back aria-label="Kembali">‹</button><h3>Postingan</h3></header>
+    <div class="scroll" id="postBox"></div>
+    <div class="cbar"><label class="field"><input id="cmtInput" type="text" placeholder="Tulis komentar..." autocomplete="off"></label><button class="send" id="cmtSend" aria-label="Kirim"><i data-icon="send"></i></button></div>
+  </section>
+
+  <div class="sheet-bg" id="sheetBg" hidden data-close></div>
+  <div class="sheet" id="sheet" hidden></div>
+  <div class="story-view" id="storyView" hidden></div>
+
+  <nav class="nav" id="nav">
+    <button data-nav="home"><i data-icon="home"></i><span>Home</span></button>
+    <button data-nav="explore"><i data-icon="compass"></i><span>Explore</span></button>
+    <button class="plus" data-act="plus" aria-label="Buat"><i data-icon="plus"></i></button>
+    <button data-nav="chat"><i data-icon="chat"></i><span>Chat</span><em class="dot" id="chatDot" hidden></em></button>
+    <button data-nav="profile"><i data-icon="user"></i><span>Profile</span></button>
+  </nav>
+
+  <div class="toast" id="toast" role="status"></div>
+</main>
+
+<script>
+'use strict';
+/* ===== KYNEX v2 – aplikasi sosial (data tersimpan di browser perangkat ini) ===== */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const KEY = 'kynex.v2';
+const nid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ---------- State ---------- */
+const defaults = () => ({ users: [], session: null, posts: [], stories: [], follows: {}, convos: {}, communities: [], notifs: [], products: [], carts: {}, orders: [], reports: [], blocks: {}, saved: {}, seen: {}, settings: { theme: 'dark', lang: 'id' } });
+function load() { try { return Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { return defaults(); } }
+let S = load();
+let LANG = (S.settings && S.settings.lang) || 'id';
+const t = s => (LANG === 'en' && EN[s]) ? EN[s] : s;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast(t('Penyimpanan penuh, hapus beberapa data.')); } }
+
+const AI = { id: 'ai', name: 'Asisten KYNEX', username: 'kynex.ai', isAI: true };
+const me = () => (S.session && S.session.uid) ? (S.users.find(u => u.id === S.session.uid) || null) : null;
+const U = i => i === 'ai' ? AI : S.users.find(u => u.id === i);
+const isGuest = () => !!(S.session && S.session.guest);
+const AV = n => `av-${(n % 6) + 1}`;
+const dk = ts => { const d = new Date(ts); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); };
+
+async function hash(s) {
+  try { if (window.crypto && crypto.subtle) { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('kynex:' + s)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join(''); } } catch (e) { }
+  let h = 5381; for (const c of 'kynex:' + s) h = ((h << 5) + h + c.charCodeAt(0)) >>> 0; return 'f' + h.toString(16);
+}
+
+/* ---------- Format ---------- */
+function timeAgo(ts) {
+  const s = Math.floor((Date.now() - ts) / 1000); if (s < 60) return t('Baru saja');
+  const m = Math.floor(s / 60); if (m < 60) return m + ' ' + t('menit lalu');
+  const h = Math.floor(m / 60); if (h < 24) return h + ' ' + t('jam lalu');
+  const d = Math.floor(h / 24); if (d < 7) return d + ' ' + t('hari lalu');
+  return new Date(ts).toLocaleDateString(LANG === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'short' });
+}
+const clock = ts => new Date(ts).toLocaleTimeString(LANG === 'en' ? 'en-US' : 'id-ID', { hour: '2-digit', minute: '2-digit' });
+const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace('.0', '') + 'M' : n >= 1000 ? (n / 1000).toFixed(1).replace('.0', '') + 'K' : String(n);
+const rp = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+const linkify = s => esc(s).replace(/(?<![&\p{L}\d_])#([\p{L}\d_]+)/gu, '<a class="tag" data-tag="$1">#$1</a>').replace(/(?<![&\p{L}\d_@])@([a-z0-9_.]{3,20})/giu, '<a class="tag" data-mention="$1">@$1</a>').replace(/\n/g, '<br>');
+const tagsOf = s => [...(s || '').matchAll(/(?<![&\p{L}\d_])#([\p{L}\d_]+)/gu)].map(m => m[1].toLowerCase());
+
+/* ---------- Ikon ---------- */
+const ICONS = {
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  eye: '<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+  bell: '<path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+  edit: '<path d="M4 20h4L19 9l-4-4L4 16v4Z"/>',
+  home: '<path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  chat: '<path d="M4 5h16v11H9l-5 4V5Z"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',
+  users: '<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-5.5 7-5.5s7 2 7 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5c2.5.6 4 2.3 4 5.5"/>',
+  heart: '<path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11Z"/>',
+  comment: '<path d="M4 5h16v11H9l-5 4V5Z"/>',
+  share: '<path d="M4 12v7h16v-7M12 3v12M8 7l4-4 4 4"/>',
+  chart: '<path d="M4 20V4M4 20h16"/><path d="m7 15 4-5 3 3 5-7"/>',
+  bookmark: '<path d="M6 3h12v18l-6-4-6 4V3Z"/>',
+  cart: '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11L21 7H6"/>',
+  send: '<path d="M21 3 3 10l7 3 3 7 8-17Z"/>',
+  trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>'
+};
+const icon = n => `<svg viewBox="0 0 24 24">${ICONS[n] || ''}</svg>`;
+const paintIcons = (root = document) => $$('i[data-icon]', root).forEach(i => i.innerHTML = icon(i.dataset.icon));
+
+/* ---------- Media (IndexedDB) ---------- */
+const MEDIA = {}; const memStore = new Map(); let idb = null;
+function openDB() { return new Promise(res => { try { const r = indexedDB.open('kynex-media', 1); r.onupgradeneeded = () => r.result.createObjectStore('m'); r.onsuccess = () => { idb = r.result; res(); }; r.onerror = () => res(); } catch (e) { res(); } }); }
+const dbTx = m => idb.transaction('m', m).objectStore('m');
+function dbPut(k, b) { return new Promise(res => { if (!idb) { memStore.set(k, b); return res(); } try { const q = dbTx('readwrite').put(b, k); q.onsuccess = () => res(); q.onerror = () => { memStore.set(k, b); res(); }; } catch (e) { memStore.set(k, b); res(); } }); }
+function dbGet(k) { return new Promise(res => { if (memStore.has(k)) return res(memStore.get(k)); if (!idb) return res(null); try { const q = dbTx('readonly').get(k); q.onsuccess = () => res(q.result || null); q.onerror = () => res(null); } catch (e) { res(null); } }); }
+function dbDel(k) { return new Promise(res => { memStore.delete(k); if (MEDIA[k]) { URL.revokeObjectURL(MEDIA[k]); delete MEDIA[k]; } if (!idb) return res(); try { const q = dbTx('readwrite').delete(k); q.onsuccess = q.onerror = () => res(); } catch (e) { res(); } }); }
+async function putMedia(blob) { const k = nid(); await dbPut(k, blob); MEDIA[k] = URL.createObjectURL(blob); return k; }
+const mu = k => (k && MEDIA[k]) || '';
+function mediaKeys() { const ks = []; S.users.forEach(u => ks.push(u.avatar, u.cover)); S.posts.forEach(p => ks.push(p.media)); S.stories.forEach(s => ks.push(s.media)); S.products.forEach(p => ks.push(p.img)); return ks.filter(Boolean); }
+async function loadMedia() { for (const k of mediaKeys()) { if (MEDIA[k]) continue; const b = await dbGet(k); if (b) MEDIA[k] = URL.createObjectURL(b); } }
+async function prepImage(file, max = 1080) {
+  try {
+    const bm = await createImageBitmap(file); const r = Math.min(1, max / Math.max(bm.width, bm.height));
+    const c = document.createElement('canvas'); c.width = Math.round(bm.width * r); c.height = Math.round(bm.height * r);
+    c.getContext('2d').drawImage(bm, 0, 0, c.width, c.height);
+    return await new Promise(res => c.toBlob(b => res(b || file), 'image/jpeg', .82));
+  } catch (e) { return file; }
+}
+function pickFile(accept) { return new Promise(res => { const i = document.createElement('input'); i.type = 'file'; i.accept = accept; i.onchange = () => res(i.files[0] || null); i.click(); }); }
+
+/* ---------- UI dasar ---------- */
+let toastT;
+function toast(m) { const e = $('#toast'); e.textContent = m; e.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => e.classList.remove('show'), 2200); }
+function openSheet(title, html, mount) {
+  const s = $('#sheet');
+  s.innerHTML = '<div class="handle"></div>' + (title ? `<h4>${esc(title)}</h4>` : '') + `<div class="sheet-body">${html}</div>`;
+  sheetFor = null; s.hidden = false; $('#sheetBg').hidden = false; paintIcons(s); if (mount) mount(s);
+}
+function closeSheet() { $('#sheet').hidden = true; $('#sheetBg').hidden = true; }
+function actionSheet(title, items) {
+  openSheet(title, items.map((x, i) => `<button class="sheet-item ${x.danger ? 'danger' : ''}" data-i="${i}">${x.ic ? `<span>${x.ic}</span>` : ''}${esc(x.label)}</button>`).join(''),
+    s => $$('.sheet-item', s).forEach(b => b.onclick = () => { closeSheet(); items[b.dataset.i].fn(); }));
+}
+function confirmSheet(msg, label, fn, danger = true) {
+  openSheet(msg, `<div class="row-gap"><button class="btn dark grow" data-close>${t('Batal')}</button><button class="btn ${danger ? 'danger' : 'primary'} grow" id="cfOk">${esc(label)}</button></div>`,
+    s => { $('#cfOk', s).onclick = () => { closeSheet(); fn(); }; });
+}
+function needUser() {
+  if (me()) return true;
+  openSheet(t('Masuk dulu ya'), `<p class="muted small" style="margin-bottom:14px">${t('Fitur ini butuh akun KYNEX.')}</p><div class="row-gap"><button class="btn primary grow" data-go="login">${t('Masuk')}</button><button class="btn dark grow" data-go="register">${t('Daftar')}</button></div>`);
+  return false;
+}
+const emptyState = (a, b) => `<div class="empty-state"><b>${esc(a)}</b><span>${esc(b)}</span></div>`;
+function chips(el, items, active, fn) {
+  el.innerHTML = items.map(i => `<button class="chip ${i === active ? 'on' : ''}" data-v="${esc(i)}">${esc(t(i))}</button>`).join('');
+  $$('.chip', el).forEach(c => c.onclick = () => fn(c.dataset.v));
+}
+function avatar(u, cls = '') {
+  if (!u) return `<div class="avatar ${cls} av-1">?</div>`;
+  if (u.isAI) return `<div class="avatar ${cls} av-ai">🤖</div>`;
+  const img = mu(u.avatar);
+  if (img) return `<div class="avatar ${cls}"><img src="${img}" alt=""></div>`;
+  return `<div class="avatar ${cls} ${AV((u.name || '').length + (u.username || '').length)}">${esc(((u.name || '?').trim()[0] || '?').toUpperCase())}</div>`;
+}
+const premBadge = u => (u && u.premium) ? ' <span class="crown-sm" title="Premium">👑</span>' : '';
+
+/* ---------- Relasi, blokir, notifikasi ---------- */
+const followersOf = id => S.users.filter(u => (S.follows[u.id] || []).includes(id));
+const blockedBy = id => S.blocks[id] || [];
+function userVisible(u) { const m = me(); if (!u) return false; if (!m) return true; return !blockedBy(m.id).includes(u.id) && !blockedBy(u.id).includes(m.id); }
+function visiblePost(p) { const m = me(); if (!U(p.uid)) return false; if (!m) return true; if (!userVisible(U(p.uid))) return false; if ((m.muted || []).includes(p.uid)) return false; return !S.reports.some(r => r.by === m.id && r.post === p.id); }
+function notify(to, type, data) {
+  const m = me(); if (!m || !to || to === m.id) return; const u = U(to); if (!u) return;
+  if ((u.notif || {})[type] === false) return;
+  S.notifs.push(Object.assign({ id: nid(), to, type, from: m.id, t: Date.now(), read: false }, data));
+}
+function updateBadges() {
+  const m = me();
+  const un = m ? S.notifs.filter(n => n.to === m.id && !n.read).length : 0;
+  $('#bellDot').hidden = !un;
+  const uc = m ? myConvos().reduce((a, x) => a + unreadOf(x.c, m.id), 0) : 0;
+  $('#chatDot').hidden = !uc;
+  const cn = m ? (S.carts[m.id] || []).reduce((a, x) => a + x.qty, 0) : 0;
+  const cb = $('#cartBadge'); cb.hidden = !cn; cb.textContent = cn;
+}
+
+/* ---------- Navigasi ---------- */
+const ROOT = ['home', 'explore', 'chat', 'profile'];
+const AUTHSCR = ['splash', 'login', 'register'];
+const NAV_SCREENS = ['home', 'explore', 'chat', 'community', 'cdetail', 'profile', 'studio', 'settings', 'notifs', 'videos', 'market', 'security'];
+const NEEDS_USER = ['chat', 'convo', 'studio', 'compose', 'notifs', 'editprofile', 'security'];
+const FORMS = ['editprofile', 'compose', 'login', 'register', 'splash', 'premium'];
+let cur = 'splash', params = {}, stack = [];
+function go(name, p = {}, o = {}) {
+  const el = $(`.screen[data-screen="${name}"]`); if (!el) return;
+  if (NEEDS_USER.includes(name) && !needUser()) return;
+  if (!o.back) {
+    if (AUTHSCR.includes(name) || (ROOT.includes(name) && !p.uid)) stack = [];
+    else if (cur && !AUTHSCR.includes(cur)) stack.push({ name: cur, params });
+  }
+  cur = name; params = p;
+  $$('.screen').forEach(s => s.classList.remove('active')); el.classList.add('active');
+  closeSheet(); stopVideos();
+  renderScreen(name);
+  $('#nav').classList.toggle('show', NAV_SCREENS.includes(name));
+  const mm = me(); const own = name === 'profile' && (!p.uid || (mm && p.uid === mm.id));
+  $$('#nav [data-nav]').forEach(b => b.classList.toggle('active', b.dataset.nav === name && (name !== 'profile' || own)));
+  $$('#sideLinks button').forEach(b => b.classList.toggle('on', b.dataset.go === name));
+  if (!o.keep) $$('.scroll', el).forEach(s => s.scrollTop = 0);
+  updateBadges();
+}
+function back() { const p = stack.pop(); if (p) go(p.name, p.params, { back: true }); else go((me() || isGuest()) ? 'home' : 'splash', {}, { back: true }); }
+function renderScreen(n) { if (R[n]) R[n](); }
+function refresh() { if (FORMS.includes(cur)) { updateBadges(); return; } renderScreen(cur); updateBadges(); }
+
+/* ---------- Postingan ---------- */
+const viewed = new Set();
+function countViews(list) {
+  const m = me(); let ch = false;
+  list.forEach(p => {
+    if ((m && p.uid === m.id) || viewed.has(p.id)) return; viewed.add(p.id);
+    p.views = (p.views || 0) + 1; const o = U(p.uid); if (o) { o.views = o.views || {}; const k = dk(Date.now()); o.views[k] = (o.views[k] || 0) + 1; } ch = true;
+  });
+  if (ch) save();
+}
+function postCard(p) {
+  const u = U(p.uid); const m = me(); if (!u) return '';
+  const liked = m && p.likes.includes(m.id); const saved = m && (S.saved[m.id] || []).includes(p.id);
+  const com = p.cid && S.communities.find(c => c.id === p.cid);
+  let media = '';
+  if (p.type === 'image' && mu(p.media)) media = `<div class="post-img"><img src="${mu(p.media)}" alt="" loading="lazy"></div>`;
+  else if (p.type === 'video' && mu(p.media)) media = `<div class="post-img"><video src="${mu(p.media)}" controls playsinline preload="metadata"></video></div>`;
+  return `<article class="post" data-post="${p.id}">
+    <div class="post-head" data-user="${u.id}">${avatar(u, 'sm')}<div><b>${esc(u.name)}${premBadge(u)}</b><span>${timeAgo(p.t)}${com ? ' · ' + esc(com.name) : ''}</span></div><button class="more" data-act="postmenu" aria-label="Menu">⋯</button></div>
+    ${p.text ? `<p>${linkify(p.text)}</p>` : ''}${media}
+    <div class="actions">
+      <button data-act="like" class="${liked ? 'liked' : ''}">${icon('heart')}<span>${fmt(p.likes.length)}</span></button>
+      <button data-act="comments">${icon('comment')}<span>${fmt(p.comments.length)}</span></button>
+      <button data-act="share">${icon('share')}</button>
+      <button data-act="save" class="push ${saved ? 'saved' : ''}">${icon('bookmark')}</button>
+    </div></article>`;
+}
+function syncPostUI(pid) {
+  const p = S.posts.find(x => x.id === pid); if (!p) return; const m = me();
+  $$(`[data-post="${pid}"]`).forEach(el => {
+    const l = $('[data-act=like]', el); if (l) { l.classList.toggle('liked', !!(m && p.likes.includes(m.id))); const sp = $('span', l); if (sp) sp.textContent = fmt(p.likes.length); }
+    const c = $('[data-act=comments] span', el); if (c) c.textContent = fmt(p.comments.length);
+    const sv = $('[data-act=save]', el); if (sv) sv.classList.toggle('saved', !!(m && (S.saved[m.id] || []).includes(pid)));
+  });
+}
+function toggleLike(pid) {
+  if (!needUser()) return; const m = me(); const p = S.posts.find(x => x.id === pid); if (!p) return;
+  const i = p.likes.indexOf(m.id);
+  if (i >= 0) { p.likes.splice(i, 1); S.notifs = S.notifs.filter(n => !(n.type === 'like' && n.from === m.id && n.post === pid)); }
+  else { p.likes.push(m.id); notify(p.uid, 'like', { post: pid }); }
+  save(); syncPostUI(pid); updateBadges();
+}
+function toggleSave(pid) {
+  if (!needUser()) return; const m = me(); const a = S.saved[m.id] = S.saved[m.id] || []; const i = a.indexOf(pid);
+  if (i >= 0) a.splice(i, 1); else a.push(pid);
+  save(); syncPostUI(pid); toast(i >= 0 ? t('Dihapus dari simpanan') : t('Disimpan'));
+}
+function sharePost(pid) {
+  const p = S.posts.find(x => x.id === pid); if (!p) return; const u = U(p.uid);
+  const text = (p.text || t('Postingan KYNEX')) + ' — ' + (u ? u.name : '');
+  if (navigator.share) { navigator.share({ title: 'KYNEX', text }).catch(() => { }); return; }
+  copyText(text);
+}
+function copyText(x) { try { navigator.clipboard.writeText(x).then(() => toast(t('Teks disalin')), () => toast(t('Tidak bisa menyalin'))); } catch (e) { toast(t('Tidak bisa menyalin')); } }
+function postMenu(pid) {
+  const p = S.posts.find(x => x.id === pid); if (!p) return; const m = me(); const items = [];
+  items.push({ ic: '👤', label: t('Lihat profil'), fn: () => go('profile', { uid: p.uid }) });
+  if (m) items.push({ ic: '📁', label: t('Simpan ke folder'), fn: () => folderPick(pid) });
+  if (m && p.uid === m.id) items.push({ ic: '📈', label: t('Statistik postingan'), fn: () => postStats(pid) });
+  if (m && p.uid === m.id) items.push({ ic: '🗑️', label: t('Hapus postingan'), danger: true, fn: () => confirmSheet(t('Hapus postingan ini?'), t('Hapus'), () => deletePost(pid)) });
+  else {
+    items.push({ ic: '🚩', label: t('Laporkan postingan'), fn: () => reportPost(pid) });
+    items.push({ ic: '🔁', label: t('Bagikan ulang'), fn: () => repost(pid) });
+    items.push({ ic: '🔇', label: t('Bisukan pengguna'), fn: () => muteUser(p.uid) });
+    items.push({ ic: '⛔', label: t('Blokir pengguna'), danger: true, fn: () => blockUser(p.uid) });
+  }
+  actionSheet('', items);
+}
+async function deletePost(pid) {
+  const p = S.posts.find(x => x.id === pid); if (!p) return; if (p.media) await dbDel(p.media);
+  S.posts = S.posts.filter(x => x.id !== pid); S.notifs = S.notifs.filter(n => n.post !== pid);
+  Object.keys(S.saved).forEach(k => S.saved[k] = S.saved[k].filter(x => x !== pid));
+  save(); toast(t('Postingan dihapus')); if (cur === 'post') back(); else refresh();
+}
+function reportPost(pid) {
+  if (!needUser()) return;
+  const reasons = ['Spam', 'Konten tidak pantas', 'Ujaran kebencian', 'Penipuan'];
+  actionSheet(t('Alasan laporan'), reasons.map(r => ({ label: t(r), fn: () => { S.reports.push({ by: me().id, post: pid, reason: r, t: Date.now() }); save(); toast(t('Laporan terkirim. Postingan disembunyikan.')); if (cur === 'post') back(); else refresh(); } })));
+}
+function blockUser(id) {
+  if (!needUser()) return; const u = U(id); if (!u) return;
+  confirmSheet(t('Blokir') + ' @' + u.username + '?', t('Blokir'), () => {
+    const m = me(); const a = S.blocks[m.id] = S.blocks[m.id] || []; if (!a.includes(id)) a.push(id);
+    S.follows[m.id] = (S.follows[m.id] || []).filter(x => x !== id); S.follows[id] = (S.follows[id] || []).filter(x => x !== m.id);
+    save(); toast(t('Pengguna diblokir')); go('home');
+  });
+}
+
+
+/* ================= RENDER LAYAR ================= */
+const ck = (a, b) => [a, b].sort().join('|');
+function myConvos() {
+  const m = me(); if (!m) return [];
+  return Object.entries(S.convos).filter(([k]) => k.split('|').includes(m.id)).map(([k, c]) => ({ k, c, peer: k.split('|').find(x => x !== m.id) || m.id, last: c.msgs[c.msgs.length - 1] }))
+    .filter(x => x.last && U(x.peer) && (x.peer === 'ai' || userVisible(U(x.peer)))).sort((a, b) => b.last.t - a.last.t);
+}
+const unreadOf = (c, mid) => c.msgs.filter(x => x.from !== mid && x.t > ((c.read || {})[mid] || 0)).length;
+const last7 = () => { const a = new Date(); a.setHours(0, 0, 0, 0); return [...Array(7)].map((_, i) => a.getTime() - (6 - i) * 864e5); };
+const bucket = (items, tsf, vf = () => 1) => { const d = last7(); const out = Array(7).fill(0); items.forEach(x => { const ix = Math.floor((tsf(x) - d[0]) / 864e5); if (ix >= 0 && ix < 7) out[ix] += vf(x); }); return out; };
+const pc = (c, p) => p ? Math.round((c - p) / p * 100) : (c ? 100 : 0);
+
+/* ----- Home ----- */
+let feedTab = 'Untuk Anda';
+const activeStories = id => S.stories.filter(s => s.uid === id && s.t > Date.now() - 864e5).sort((a, b) => a.t - b.t);
+function storiesHTML(m) {
+  const seen = S.seen[m.id] || {}; const mine = activeStories(m.id);
+  let h = `<div class="story" data-act="story" data-uid="${m.id}"><div class="ring ${mine.length ? (mine.every(s => seen[s.id]) ? 'seen' : 'new') : 'none'}">${avatar(m, 'md')}<button class="story-plus" data-act="addstory" aria-label="Tambah cerita">+</button></div><span>${t('Cerita Anda')}</span></div>`;
+  (S.follows[m.id] || []).forEach(i => {
+    const u = U(i); if (!u || !userVisible(u)) return; const ss = activeStories(i); if (!ss.length) return;
+    h += `<div class="story" data-act="story" data-uid="${i}"><div class="ring ${ss.every(s => seen[s.id]) ? 'seen' : 'new'}">${avatar(u, 'md')}</div><span>${esc(u.name.split(' ')[0])}</span></div>`;
+  });
+  return h;
+}
+function renderHome() {
+  const m = me(); const st = $('#stories');
+  if (m) { st.style.display = ''; st.innerHTML = storiesHTML(m); } else st.style.display = 'none';
+  chips($('#feedChips'), ['Untuk Anda', 'Mengikuti'], feedTab, v => { feedTab = v; renderHome(); });
+  let list = S.posts.filter(visiblePost);
+  if (feedTab === 'Mengikuti') { const f = m ? (S.follows[m.id] || []) : []; list = list.filter(p => m && (p.uid === m.id || f.includes(p.uid))); }
+  list.sort((a, b) => b.t - a.t);
+  $('#feed').innerHTML = list.length ? list.map(postCard).join('') : emptyState(t('Belum ada postingan'), feedTab === 'Mengikuti' ? t('Ikuti orang untuk melihat postingan mereka di sini.') : t('Buat postingan pertamamu lewat tombol +.'));
+  countViews(list); paintIcons($('#feed'));
+}
+
+/* ----- Explore ----- */
+let exTab = 'Semua';
+function userRow(u) {
+  const m = me(); const f = m && (S.follows[m.id] || []).includes(u.id);
+  return `<div class="urow">${avatar(u)}<div class="meta" data-user="${u.id}"><b>${esc(u.name)}${premBadge(u)}</b><span>@${esc(u.username)}</span></div>${m && u.id !== m.id ? `<button class="fbtn ${f ? 'on' : ''}" data-act="follow" data-uid="${u.id}">${f ? t('Mengikuti') : t('Ikuti')}</button>` : ''}</div>`;
+}
+function tileHTML(p, meta) {
+  const u = U(p.uid); let inner;
+  if (p.type === 'image' && mu(p.media)) inner = `<img src="${mu(p.media)}" alt="" loading="lazy">`;
+  else if (p.type === 'video' && mu(p.media)) inner = `<video src="${mu(p.media)}#t=0.1" muted playsinline preload="metadata"></video><span class="play">▶</span>`;
+  else inner = `<div class="ttile">${esc((p.text || '').slice(0, 120))}</div>`;
+  return `<div class="${meta ? 'tile' : 'cell'}" data-openpost="${p.id}">${inner}${meta ? `<div class="meta"><b>${esc(u ? u.name : '')}</b>♥ ${fmt(p.likes.length)}</div>` : ''}</div>`;
+}
+function renderExplore() {
+  const q = $('#exSearch').value.trim().toLowerCase();
+  $('#exDefault').style.display = q ? 'none' : ''; $('#exResults').style.display = q ? '' : 'none';
+  const vis = S.posts.filter(visiblePost);
+  if (q) {
+    const isTag = q.startsWith('#'); const term = q.replace(/^[#@]/, '');
+    const people = isTag ? [] : S.users.filter(u => userVisible(u) && (u.name + ' ' + u.username).toLowerCase().includes(term));
+    const coms = isTag ? [] : S.communities.filter(c => c.name.toLowerCase().includes(term));
+    const posts = vis.filter(p => isTag ? tagsOf(p.text).includes(term) : (p.text || '').toLowerCase().includes(q)).sort((a, b) => b.t - a.t);
+    let h = '';
+    if (people.length) h += `<h4 class="sec">${t('Orang')}</h4>` + people.map(userRow).join('');
+    if (coms.length) h += `<h4 class="sec">${t('Komunitas')}</h4>` + coms.map(c => `<div class="com-item" data-act="opencom" data-cid="${c.id}"><div class="avatar sq av-${(c.name.length % 6) + 1}">${c.emoji}</div><div class="meta"><b>${esc(c.name)}</b><span>${fmt(c.members.length)} ${t('anggota')}</span></div></div>`).join('');
+    if (posts.length) h += `<h4 class="sec">${t('Postingan')}</h4>` + posts.map(postCard).join('');
+    $('#exResults').innerHTML = h || `<p class="empty">${t('Tidak ada hasil.')}</p>`;
+    countViews(posts); paintIcons($('#exResults')); return;
+  }
+  chips($('#exChips'), ['Semua', 'Foto', 'Video', 'Teks'], exTab, v => { exTab = v; renderExplore(); });
+  const map = { Foto: 'image', Video: 'video', Teks: 'text' };
+  let list = vis.filter(p => exTab === 'Semua' || p.type === map[exTab]).sort((a, b) => (b.likes.length - a.likes.length) || (b.t - a.t)).slice(0, 30);
+  $('#exGrid').innerHTML = list.length ? list.map(p => tileHTML(p, true)).join('') : emptyState(t('Belum ada konten'), t('Konten untuk dijelajahi akan muncul di sini.'));
+  const counts = {}; vis.forEach(p => tagsOf(p.text).forEach(g => counts[g] = (counts[g] || 0) + 1));
+  const tags = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  $('#hashChips').innerHTML = tags.length ? tags.map(([g, n]) => `<button class="chip tag" data-tag="${esc(g)}">#${esc(g)} · ${n}</button>`).join('') : `<span class="muted small">${t('Belum ada hashtag.')}</span>`;
+  const cr = S.users.filter(userVisible).map(u => ({ u, n: followersOf(u.id).length })).sort((a, b) => b.n - a.n).slice(0, 10);
+  $('#creators').innerHTML = cr.length ? cr.map(x => `<div data-user="${x.u.id}">${avatar(x.u)}${esc(x.u.name.split(' ')[0])}</div>`).join('') : `<span class="muted small">${t('Belum ada creator.')}</span>`;
+}
+function openTag(tag) { go('explore'); $('#exSearch').value = '#' + tag; renderExplore(); }
+
+/* ----- Chat ----- */
+let chatTab = 'Semua';
+function renderChats() {
+  const m = me(); if (!m) return; const q = $('#chatSearch').value.trim().toLowerCase();
+  chips($('#chatChips'), ['Semua', 'Belum dibaca'], chatTab, v => { chatTab = v; renderChats(); });
+  let list = myConvos().filter(x => U(x.peer).name.toLowerCase().includes(q));
+  if (chatTab === 'Belum dibaca') list = list.filter(x => unreadOf(x.c, m.id) > 0);
+  $('#chatList').innerHTML = list.length ? list.map(x => {
+    const u = U(x.peer); const un = unreadOf(x.c, m.id);
+    return `<div class="chat-item" data-act="openchat" data-peer="${x.peer}">${avatar(u)}<div class="meta"><b>${esc(u.name)}${premBadge(u)}<em>${clock(x.last.t)}</em></b><p><span>${x.last.from === m.id ? t('Kamu') + ': ' : ''}${esc(x.last.text)}</span>${un ? `<i class="badge">${un}</i>` : ''}</p></div></div>`;
+  }).join('') : emptyState(t('Belum ada pesan'), t('Mulai percakapan dengan temanmu.'));
+}
+function renderConvo() {
+  const m = me(), peer = params.peer, u = peer && U(peer); if (!m || !u) { back(); return; }
+  const key = ck(m.id, peer); const c = S.convos[key] || { msgs: [], read: {} };
+  $('#cvAvatar').innerHTML = avatar(u, 'sm'); $('#cvName').innerHTML = esc(u.name) + premBadge(u);
+  $('#cvSub').textContent = u.isAI ? t('Asisten lokal berbasis aturan') : '@' + u.username;
+  $('#cvHead').dataset.user = u.isAI ? '' : u.id; $('#aiChips').style.display = u.isAI ? '' : 'none';
+  const box = $('#msgs');
+  let h = c.msgs.map(x => `<div class="msg ${x.from === m.id ? 'me' : 'them'} ${x.sticker ? 'sticker' : ''}" data-mid="${x.id}">${msgQuote(c, x)}${esc(x.text)}${x.sticker ? '' : `<small>${clock(x.t)}</small>`}${x.react ? `<span class="react">${esc(x.react)}</span>` : ''}</div>`).join('');
+  if (!c.msgs.length) h = u.isAI ? `<div class="msg them">${esc(AIB.help())}</div>` : `<p class="empty-state"><b>${t('Belum ada pesan')}</b><span>${t('Kirim pesan pertama ke')} ${esc(u.name)}</span></p>`;
+  box.innerHTML = h;
+  if (S.convos[key] && unreadOf(c, m.id) > 0) { S.convos[key].read = S.convos[key].read || {}; S.convos[key].read[m.id] = Date.now(); save(); }
+  box.scrollTop = box.scrollHeight; updateBadges();
+}
+
+/* ----- Komunitas ----- */
+let comTab = 'Semua';
+const COMCATS = ['Teknologi', 'Hobi', 'Game', 'Musik', 'Lainnya'];
+function renderCommunities() {
+  const m = me(); const q = $('#comSearch').value.trim().toLowerCase();
+  chips($('#comChips'), ['Semua', 'Bergabung', ...COMCATS], comTab, v => { comTab = v; renderCommunities(); });
+  const list = S.communities.filter(c => c.name.toLowerCase().includes(q) && (comTab === 'Semua' || (comTab === 'Bergabung' ? (m && c.members.includes(m.id)) : c.cat === comTab))).sort((a, b) => b.members.length - a.members.length);
+  $('#comList').innerHTML = list.length ? list.map(c => {
+    const inn = m && c.members.includes(m.id);
+    return `<div class="com-item" data-act="opencom" data-cid="${c.id}"><div class="avatar sq av-${(c.name.length % 6) + 1}">${c.emoji}</div><div class="meta"><b>${esc(c.name)}</b><span>${fmt(c.members.length)} ${t('anggota')} · ${t(c.cat)}</span></div><button class="join ${inn ? 'joined' : ''}" data-act="join" data-cid="${c.id}">${inn ? t('Bergabung ✓') : t('Gabung')}</button></div>`;
+  }).join('') : (S.communities.length ? `<p class="empty">${t('Komunitas tidak ditemukan.')}</p>` : emptyState(t('Belum ada komunitas'), t('Gabung atau buat komunitas pertamamu.')));
+}
+function renderCommunity() {
+  const c = S.communities.find(x => x.id === params.id); if (!c) { back(); return; } const m = me(); const inn = m && c.members.includes(m.id);
+  $('#cdTitle').textContent = c.name;
+  const posts = S.posts.filter(p => p.cid === c.id && visiblePost(p)).sort((a, b) => b.t - a.t);
+  $('#cdBox').innerHTML = `<div class="cd-head"><div class="emoji">${c.emoji}</div><h2>${esc(c.name)}</h2><p class="muted small">${fmt(c.members.length)} ${t('anggota')} · ${t(c.cat)}</p>${c.desc ? `<p style="margin:8px 0;font-size:14px">${esc(c.desc)}</p>` : ''}</div>
+    <div class="row-gap"><button class="btn ${inn ? 'dark' : 'primary'} grow" data-act="join" data-cid="${c.id}">${inn ? t('Bergabung ✓') : t('Gabung')}</button><button class="btn dark grow" data-act="compcom" data-cid="${c.id}">${t('Buat Postingan')}</button></div>`
+    + (posts.length ? posts.map(postCard).join('') : emptyState(t('Belum ada postingan'), t('Jadilah yang pertama memposting di komunitas ini.')));
+  countViews(posts);
+}
+
+/* ----- Profil ----- */
+let pfTab = 'Postingan', pfFor = null;
+function renderProfile() {
+  const m = me(); const uidv = params.uid || (m && m.id); const u = uidv ? U(uidv) : null; const own = !!(m && u && u.id === m.id); const box = $('#profileBox');
+  if (!u) {
+    box.innerHTML = `<div class="cover"><div class="cover-bg"></div><div class="cover-actions"><button data-go="settings" aria-label="Pengaturan"><i data-icon="gear"></i></button></div></div><div class="pad"><div class="avatar xl av-3">T</div><h2 class="pf-name">Tamu KYNEX</h2><p class="muted small">@tamu</p><p class="bio">${t('Kamu masuk sebagai tamu. Daftar untuk fitur lengkap ✨')}</p><div class="row-gap"><button class="btn primary grow" data-go="register">${t('Daftar')}</button><button class="btn dark grow" data-go="login">${t('Masuk')}</button></div></div>`;
+    paintIcons(box); return;
+  }
+  if (pfFor !== u.id) { pfFor = u.id; pfTab = 'Postingan'; }
+  const showBack = !!params.uid && stack.length > 0; const cover = mu(u.cover);
+  const posts = S.posts.filter(p => p.uid === u.id && visiblePost(p)).sort((a, b) => b.t - a.t);
+  const fl = followersOf(u.id).length, fg = (S.follows[u.id] || []).length; const f = m && (S.follows[m.id] || []).includes(u.id);
+  box.innerHTML = `<div class="cover">${cover ? `<img src="${cover}" alt="">` : '<div class="cover-bg"></div>'}${showBack ? `<button class="back float" data-back aria-label="Kembali">‹</button>` : ''}
+    <div class="cover-actions">${own ? `<button data-go="studio" aria-label="Studio"><i data-icon="chart"></i></button><button data-go="settings" aria-label="Pengaturan"><i data-icon="gear"></i></button>` : `<button data-act="profmenu" data-uid="${u.id}" aria-label="Menu">⋯</button>`}</div></div>
+    <div class="pad">${avatar(u, 'xl')}<h2 class="pf-name">${esc(u.name)}${premBadge(u)}</h2><p class="muted small">@${esc(u.username)}</p><p class="bio">${esc(u.bio || t('Belum ada bio.'))}</p>
+    <div class="stats3"><div><b>${posts.length}</b><span>${t('Postingan')}</span></div><div data-act="flist" data-kind="followers" data-uid="${u.id}"><b>${fmt(fl)}</b><span>${t('Pengikut')}</span></div><div data-act="flist" data-kind="following" data-uid="${u.id}"><b>${fmt(fg)}</b><span>${t('Mengikuti')}</span></div></div>
+    <div class="row-gap">${own ? `<button class="btn dark grow" data-go="editprofile">${t('Edit Profil')}</button><button class="btn dark sq" data-act="shareprof" aria-label="Bagikan">⋯</button>`
+      : `<button class="btn ${f ? 'dark' : 'primary'} grow" data-act="follow" data-uid="${u.id}">${f ? t('Mengikuti') : t('Ikuti')}</button><button class="btn dark grow" data-act="openchat" data-peer="${u.id}">${t('Pesan')}</button>`}</div>
+    <div class="chips tabs" id="pfTabs"></div><div class="grid3" id="pfGrid"></div></div>`;
+  paintIcons(box);
+  chips($('#pfTabs'), own ? ['Postingan', 'Video', 'Simpan'] : ['Postingan', 'Video'], pfTab, v => { pfTab = v; renderProfile(); });
+  let list, ea, eb;
+  if (pfTab === 'Video') { list = posts.filter(p => p.type === 'video'); ea = 'Belum ada video'; eb = 'Video akan muncul di sini.'; }
+  else if (pfTab === 'Simpan') { list = S.posts.filter(p => (S.saved[m.id] || []).includes(p.id) && visiblePost(p)); ea = 'Belum ada simpanan'; eb = 'Postingan yang kamu simpan akan muncul di sini.'; }
+  else { list = posts; ea = 'Belum ada postingan'; eb = 'Postingan akan muncul di sini.'; }
+  $('#pfGrid').innerHTML = list.length ? list.map(p => tileHTML(p, false)).join('') : emptyState(t(ea), t(eb));
+  countViews(posts);
+}
+let ep = { avatar: null, cover: null };
+function renderEdit() {
+  const m = me(); if (!m) return; ep = { avatar: null, cover: null };
+  $('#epName').value = m.name; $('#epUser').value = m.username; $('#epBio').value = m.bio || ''; $('#epErr').hidden = true;
+  $('#epAv').innerHTML = avatar(m);
+  const cv = mu(m.cover); $('#epCover').innerHTML = (cv ? `<img src="${cv}" style="width:100%;height:100%;object-fit:cover" alt="">` : '<div class="cover-bg"></div>') + `<span>${t('Ganti sampul')}</span>`;
+}
+
+/* ----- Studio ----- */
+let stTab = 'Ringkasan';
+function renderStudio() {
+  const m = me(); if (!m) return;
+  chips($('#stTabs'), ['Ringkasan', 'Konten', 'Audiens', 'Monetisasi'], stTab, v => { stTab = v; renderStudio(); });
+  const days = last7(), d0 = days[0], now = Date.now(), W = 7 * 864e5;
+  const mine = S.notifs.filter(n => n.to === m.id);
+  const rng = (arr, a, b) => arr.filter(x => x.t >= a && x.t < b).length;
+  const chg = arr => { const c = rng(arr, d0, now + 1), p = rng(arr, d0 - W, d0); return [c, pc(c, p)]; };
+  const sgn = v => (v > 0 ? '+' : '') + v + '%';
+  const likes = mine.filter(n => n.type === 'like'), cmts = mine.filter(n => n.type === 'comment'), fols = mine.filter(n => n.type === 'follow');
+  const myPosts = S.posts.filter(p => p.uid === m.id), orders = S.orders.filter(o => o.seller === m.id);
+  let big, label, vals, stats, pct = 0, lt, lh = '';
+  if (stTab === 'Ringkasan') {
+    vals = days.map(ts => (m.views && m.views[dk(ts)]) || 0); const cur7 = vals.reduce((a, b) => a + b, 0);
+    let prev7 = 0; for (let i = 1; i <= 7; i++) prev7 += (m.views && m.views[dk(d0 - i * 864e5)]) || 0;
+    label = t('Total Tayangan (7 hari)'); big = fmt(cur7); pct = pc(cur7, prev7);
+    const L = chg(likes), C = chg(cmts), F = chg(fols);
+    stats = [[t('Like'), fmt(L[0]), sgn(L[1])], [t('Komentar'), fmt(C[0]), sgn(C[1])], [t('Pengikut Baru'), fmt(F[0]), sgn(F[1])]];
+    lt = t('Aktivitas Terbaru'); const rec = mine.slice().sort((a, b) => b.t - a.t).slice(0, 5);
+    lh = rec.length ? rec.map(n => notifRow(n, false)).join('') : emptyState(t('Belum ada aktivitas'), t('Aktivitas dari audiensmu akan tampil di sini.'));
+  } else if (stTab === 'Konten') {
+    vals = bucket(myPosts, p => p.t); label = t('Total Postingan'); big = fmt(myPosts.length);
+    const c = rng(myPosts, d0, now + 1), p = rng(myPosts, d0 - W, d0); pct = pc(c, p);
+    stats = [[t('Video'), myPosts.filter(x => x.type === 'video').length, ''], [t('Foto'), myPosts.filter(x => x.type === 'image').length, ''], [t('Teks'), myPosts.filter(x => x.type === 'text').length, '']];
+    lt = t('Konten Terbaik'); const top = myPosts.slice().sort((a, b) => (b.likes.length + b.comments.length) - (a.likes.length + a.comments.length)).slice(0, 5);
+    lh = top.length ? top.map(p => `<div class="best" data-openpost="${p.id}"><div class="thumb">${p.type === 'image' && mu(p.media) ? `<img src="${mu(p.media)}" alt="">` : p.type === 'video' && mu(p.media) ? `<video src="${mu(p.media)}#t=0.1" muted preload="metadata"></video>` : '📝'}</div><div><b>${esc((p.text || t('(tanpa teks)')).slice(0, 50))}</b><span>${p.likes.length} ${t('suka')} · ${p.comments.length} ${t('komentar')} · ${fmt(p.views || 0)} ${t('tayangan')}</span></div></div>`).join('') : emptyState(t('Belum ada konten'), t('Konten terbaikmu akan tampil di sini.'));
+  } else if (stTab === 'Audiens') {
+    vals = bucket(fols, n => n.t); const fl = followersOf(m.id); label = t('Total Pengikut'); big = fmt(fl.length); pct = chg(fols)[1];
+    stats = [[t('Pengikut'), fmt(fl.length), ''], [t('Mengikuti'), fmt((S.follows[m.id] || []).length), ''], [t('Komunitas'), S.communities.filter(c => c.members.includes(m.id)).length, '']];
+    lt = t('Pengikut Terbaru'); lh = fl.length ? fl.slice(-5).reverse().map(userRow).join('') : emptyState(t('Belum ada pengikut'), t('Pengikutmu akan tampil di sini.'));
+  } else {
+    vals = bucket(orders, o => o.t, o => o.price * o.qty); const sum = orders.reduce((a, o) => a + o.price * o.qty, 0);
+    label = t('Total Penjualan'); big = rp(sum); const c = orders.filter(o => o.t >= d0).reduce((a, o) => a + o.price * o.qty, 0), p = orders.filter(o => o.t >= d0 - W && o.t < d0).reduce((a, o) => a + o.price * o.qty, 0); pct = pc(c, p);
+    stats = [[t('Pesanan'), orders.length, ''], [t('Produk'), S.products.filter(x => x.uid === m.id).length, ''], ['Premium', m.premium ? t('Aktif') : t('Tidak'), '']];
+    lt = t('Pesanan Terbaru'); lh = orders.length ? orders.slice().sort((a, b) => b.t - a.t).slice(0, 5).map(o => `<div class="best"><div class="thumb">🛍️</div><div><b>${esc(o.title)}</b><span>${o.qty}x · ${rp(o.price * o.qty)} · ${esc((U(o.buyer) || {}).name || '?')}</span></div></div>`).join('') : emptyState(t('Belum ada pesanan'), t('Pesanan produkmu akan tampil di sini.'));
+  }
+  $('#bigLabel').textContent = label; $('#bigNum').textContent = big;
+  const up = $('#bigUp'); up.textContent = sgn(pct); up.classList.toggle('down', pct < 0);
+  const mx = Math.max(...vals, 1); const pts = vals.map((v, i) => [i * (160 / 6), 62 - (v / mx) * 52]);
+  const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  $('#sparkLine').setAttribute('d', line); $('#sparkArea').setAttribute('d', line + ' L160 70 L0 70Z');
+  $('#stStats').innerHTML = stats.map(s => `<div class="stat"><span>${s[0]}</span><b>${s[1]}</b>${s[2] ? `<em>${s[2]}</em>` : ''}</div>`).join('');
+  $('#stListTitle').textContent = lt; $('#stList').innerHTML = lh;
+}
+
+/* ----- Pengaturan, keamanan, premium ----- */
+const SET = [['👤', 'Akun & Profil', 'Kelola akun Anda', 'edit'], ['🔒', 'Privasi & Keamanan', 'Atur keamanan akun', 'security'], ['🔔', 'Notifikasi', 'Kelola notifikasi', 'notif'], ['🎨', 'Tampilan', 'Atur tema dan tampilan', 'theme'], ['🌐', 'Bahasa', 'Pilih bahasa aplikasi', 'lang'], ['📲', 'Pasang Aplikasi', 'Tambahkan KYNEX ke layar utama', 'install'], ['📁', 'Folder Tersimpan', 'Kumpulan postingan simpananmu', 'folders'], ['💾', 'Cadangan Data', 'Ekspor, impor, dan akun dibisukan', 'backup'], ['❓', 'Bantuan', 'Pusat bantuan & FAQ', 'help'], ['ℹ️', 'Tentang KYNEX', 'Versi 2.0.0', 'about'], ['🗑️', 'Hapus Semua Data', 'Reset aplikasi di perangkat ini', 'reset']];
+function renderSettings() {
+  const q = $('#setSearch').value.trim().toLowerCase();
+  const list = SET.filter(s => (t(s[1]) + t(s[2])).toLowerCase().includes(q));
+  $('#setList').innerHTML = list.length ? list.map(s => `<button class="set-item" data-act="setting" data-k="${s[3]}"><span class="ic">${s[0]}</span><div><b>${t(s[1])}</b><span>${t(s[2])}</span></div><span class="arr">›</span></button>`).join('') : `<p class="empty">${t('Pengaturan tidak ditemukan.')}</p>`;
+  $('#logout').textContent = me() ? t('Keluar') : t('Masuk');
+}
+function renderSecurity() {
+  const m = me(); if (!m) return; const nb = blockedBy(m.id).length;
+  $('#secList').innerHTML = `<div class="sw-row" data-act="twofa"><div style="flex:1"><b style="display:block;font-size:14px">${t('Verifikasi dua langkah (PIN)')}</b><span class="muted small">${t('Minta PIN 4 digit setiap kali masuk')}</span></div><i class="switch ${m.pin ? 'on' : ''}"></i></div>
+    <button class="set-item" data-act="chpass"><span class="ic">🔑</span><div><b>${t('Ganti password')}</b><span>${t('Perbarui password akunmu')}</span></div><span class="arr">›</span></button>
+    <button class="set-item" data-act="blocked"><span class="ic">⛔</span><div><b>${t('Akun diblokir')}</b><span>${nb} ${t('akun')}</span></div><span class="arr">›</span></button>
+    <button class="set-item" data-act="delacct"><span class="ic">🗑️</span><div><b style="color:var(--red)">${t('Hapus akun')}</b><span>${t('Hapus akun dan semua kontenmu')}</span></div><span class="arr">›</span></button>
+    <p class="muted small" style="margin-top:16px;line-height:1.5">${t('Data tersimpan di perangkat ini saja. Tidak ada server, jadi password tidak bisa direset dari jauh.')}</p>`;
+}
+function renderPremium() {
+  const m = me(); const on = !!(m && m.premium);
+  const perks = ['Tanpa Iklan', 'Lencana 👑 di profil', 'Stiker Premium di chat', 'Dukungan Prioritas'];
+  $('#perks').innerHTML = perks.map(p => `<li class="${on ? 'on' : ''}"><span class="ck">✓</span>${t(p)}</li>`).join('');
+  $('#upgrade').textContent = on ? t('Premium Aktif ✓') : t('Upgrade Sekarang'); $('#cancelPrem').hidden = !on;
+}
+
+/* ----- Notifikasi ----- */
+function notifText(n) {
+  const u = U(n.from); const nm = `<b>${esc(u ? u.name : '?')}</b>`;
+  switch (n.type) {
+    case 'like': return nm + ' ' + t('menyukai postingan kamu');
+    case 'comment': return nm + ' ' + t('berkomentar') + ': “' + esc((n.text || '').slice(0, 80)) + '”';
+    case 'follow': return nm + ' ' + t('mulai mengikuti kamu');
+    case 'order': return nm + ' ' + t('membeli') + ' ' + esc(n.title || '') + ' (' + n.qty + 'x)';
+    case 'join': return nm + ' ' + t('bergabung ke') + ' ' + esc(n.cname || '');
+  }
+  return nm;
+}
+const notifRow = (n, unread) => `<div class="notif ${unread ? 'unread' : ''}" data-act="opennotif" data-nid="${n.id}">${avatar(U(n.from), 'sm')}<div><div class="t">${notifText(n)}</div><small>${timeAgo(n.t)}</small></div></div>`;
+function renderNotifs() {
+  const m = me(); if (!m) return; const list = S.notifs.filter(n => n.to === m.id).sort((a, b) => b.t - a.t);
+  const un = new Set(list.filter(n => !n.read).map(n => n.id));
+  $('#notifList').innerHTML = list.length ? list.map(n => notifRow(n, un.has(n.id))).join('') : emptyState(t('Belum ada notifikasi'), t('Suka, komentar, dan pengikut baru akan muncul di sini.'));
+  if (un.size) { S.notifs.forEach(n => { if (n.to === m.id) n.read = true; }); save(); updateBadges(); }
+}
+
+/* ----- Video ----- */
+let vMuted = true, vObs = null;
+function stopVideos() { if (vObs) { vObs.disconnect(); vObs = null; } $$('#vfeed video').forEach(v => v.pause()); }
+function renderVideos() {
+  const list = S.posts.filter(p => p.type === 'video' && mu(p.media) && visiblePost(p)).sort((a, b) => b.t - a.t); const f = $('#vfeed'); const m = me();
+  $('#muteBtn').textContent = vMuted ? '🔇' : '🔊';
+  if (!list.length) { f.innerHTML = `<div class="vempty">${emptyState(t('Belum ada video'), t('Unggah video pertamamu dari tombol +.'))}</div>`; return; }
+  f.innerHTML = list.map(p => {
+    const u = U(p.uid); const liked = m && p.likes.includes(m.id); const sv = m && (S.saved[m.id] || []).includes(p.id);
+    return `<div class="vitem" data-post="${p.id}"><video src="${mu(p.media)}" loop playsinline preload="metadata"></video><div class="vinfo"><b data-user="${u.id}">@${esc(u.username)}${premBadge(u)}</b>${p.text ? linkify(p.text) : ''}</div>
+      <div class="vrail"><button data-act="like" class="${liked ? 'liked' : ''}">${icon('heart')}<span>${fmt(p.likes.length)}</span></button><button data-act="comments">${icon('comment')}<span>${fmt(p.comments.length)}</span></button><button data-act="save" class="${sv ? 'saved' : ''}">${icon('bookmark')}</button><button data-act="share">${icon('share')}</button></div></div>`;
+  }).join('');
+  $$('#vfeed video').forEach(v => v.muted = vMuted);
+  vObs = new IntersectionObserver(es => es.forEach(e => { const v = $('video', e.target); if (!v) return; if (e.isIntersecting && e.intersectionRatio > .6) { v.muted = vMuted; v.play().catch(() => { }); } else v.pause(); }), { root: f, threshold: [0, .6, 1] });
+  $$('.vitem', f).forEach(x => vObs.observe(x)); countViews(list);
+}
+
+/* ----- Marketplace ----- */
+function renderMarket() {
+  const q = $('#mkSearch').value.trim().toLowerCase();
+  const list = S.products.filter(p => U(p.uid) && userVisible(U(p.uid)) && (p.title + ' ' + (p.desc || '')).toLowerCase().includes(q)).sort((a, b) => b.t - a.t);
+  $('#mkGrid').innerHTML = list.length ? list.map(p => `<div class="pcard" data-act="product" data-pid="${p.id}"><div class="pimg">${mu(p.img) ? `<img src="${mu(p.img)}" alt="">` : '🛍️'}</div><div class="pi"><b>${esc(p.title)}</b><div class="price">${rp(p.price)}</div><span>${esc(U(p.uid).name)}</span></div></div>`).join('')
+    : (S.products.length ? `<p class="empty">${t('Produk tidak ditemukan.')}</p>` : emptyState(t('Belum ada produk'), t('Jual produk pertamamu dengan tombol +.')));
+}
+
+/* ----- Compose & detail postingan ----- */
+let draft = { blob: null, type: 'text', url: null };
+function renderCompose() {
+  const m = me(); if (!m) return; draft = { blob: null, type: 'text', url: null };
+  $('#cText').value = ''; $('#cPreview').hidden = true; $('#cPreview').innerHTML = ''; $('#cPost').disabled = false;
+  const mine = S.communities.filter(c => c.members.includes(m.id) || c.id === params.cid);
+  $('#cCom').innerHTML = `<option value="">${t('Tanpa komunitas')}</option>` + mine.map(c => `<option value="${c.id}">${c.emoji} ${esc(c.name)}</option>`).join('');
+  $('#cCom').value = params.cid || '';
+}
+function commentsHTML(p) {
+  const m = me();
+  return p.comments.length ? p.comments.map(c => { const u = U(c.uid); return `<div class="cmt">${avatar(u, 'sm')}<div style="flex:1;min-width:0"><b data-user="${c.uid}">${esc(u ? u.name : '?')}</b><span>${timeAgo(c.t)}</span><p>${linkify(c.text)}</p></div>${m && (c.uid === m.id || p.uid === m.id) ? `<button class="del" data-act="delcmt" data-cid="${c.id}">${t('Hapus')}</button>` : ''}</div>`; }).join('') : `<p class="empty">${t('Belum ada komentar.')}</p>`;
+}
+function renderPostDetail() {
+  const p = S.posts.find(x => x.id === params.id); if (!p || !visiblePost(p)) { back(); return; }
+  $('#postBox').innerHTML = postCard(p) + `<h4 class="sec">${t('Komentar')} (${p.comments.length})</h4><div id="cmts">${commentsHTML(p)}</div>`;
+  countViews([p]); paintIcons($('#postBox'));
+}
+
+const R = { home: renderHome, explore: renderExplore, chat: renderChats, convo: renderConvo, community: renderCommunities, cdetail: renderCommunity, profile: renderProfile, editprofile: renderEdit, studio: renderStudio, settings: renderSettings, security: renderSecurity, premium: renderPremium, notifs: renderNotifs, videos: renderVideos, market: renderMarket, compose: renderCompose, post: renderPostDetail };
+
+
+/* ================= ASISTEN AI (lokal, berbasis aturan) ================= */
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const AIB = {
+  help: () => t('Halo! Aku asisten KYNEX 🤖 Coba ketik:\n• "caption liburan"\n• "hashtag kuliner"\n• "ide konten"\n• "ringkas <teks panjang>"\nAku berjalan lokal di perangkatmu, tanpa internet.'),
+  caption(topic) {
+    const x = (topic || t('hari ini')).trim();
+    return pick([`${x} bikin hari lebih berwarna ✨`, `Cerita kecil tentang ${x} 💜`, `Menikmati ${x}, satu momen dalam satu waktu.`, `${x}: alasan kenapa aku tersenyum hari ini 😊`, `Sedang jatuh cinta dengan ${x} 🌙`]) + ' #' + x.replace(/\s+/g, '').toLowerCase().slice(0, 18) + ' #kynex';
+  },
+  hashtags(topic) {
+    const b = (topic || 'hidup').toLowerCase().replace(/[^\p{L}\d\s]/gu, '').split(/\s+/).filter(Boolean)[0] || 'hidup';
+    return ['#' + b, '#' + b + 'indonesia', '#' + b + 'lover', '#' + b + 'daily', '#kynex', '#terhubung'].join(' ');
+  },
+  ideas: () => pick(['Ide konten: 3 hal yang kamu pelajari minggu ini, ditulis singkat + 1 foto.', 'Ide konten: video 15 detik "behind the scene" pekerjaanmu.', 'Ide konten: tanya pengikutmu, "Apa yang bikin harimu lebih baik?"', 'Ide konten: foto sebelum–sesudah dari proyek kecilmu.']),
+  summarize(text) {
+    const s = (text || '').replace(/\s+/g, ' ').trim(); if (s.length < 20) return t('Tempel teks yang lebih panjang setelah kata "ringkas".');
+    const parts = s.split(/(?<=[.!?])\s+/); const w = {}; s.toLowerCase().match(/\p{L}{5,}/gu)?.forEach(x => w[x] = (w[x] || 0) + 1);
+    const kw = Object.entries(w).sort((a, b) => b[1] - a[1]).slice(0, 3).map(x => x[0]);
+    const first = parts[0].length > 140 ? parts[0].slice(0, 137) + '…' : parts[0];
+    return `${t('Ringkasan')}: ${first}` + (kw.length ? `\n${t('Kata kunci')}: ${kw.join(', ')}` : '');
+  },
+  reply(text) {
+    const x = text.trim(), l = x.toLowerCase(); let m;
+    if ((m = l.match(/^ringkas\s+([\s\S]+)/))) return AIB.summarize(x.slice(x.toLowerCase().indexOf('ringkas') + 7));
+    if (/^(summarize)\s+/.test(l)) return AIB.summarize(x.replace(/^summarize\s+/i, ''));
+    if ((m = l.match(/caption\s*(.*)/))) return AIB.caption(m[1]);
+    if ((m = l.match(/(hashtag|tagar)\s*(.*)/))) return AIB.hashtags(m[2]);
+    if (/ide|idea/.test(l)) return AIB.ideas();
+    if (/^(halo|hai|hi|hello|hey)\b/.test(l)) return pick([t('Halo! Ada yang bisa kubantu? 😊'), t('Hai! Mau bikin caption atau cari ide konten?')]);
+    if (/(jam|waktu|time)/.test(l)) return new Date().toLocaleString(LANG === 'en' ? 'en-US' : 'id-ID');
+    if (/(terima kasih|makasih|thanks)/.test(l)) return t('Sama-sama! 💜');
+    if (/(bantuan|help|apa saja)/.test(l)) return AIB.help();
+    return t('Maaf, aku belum paham. Ketik "bantuan" untuk melihat yang bisa kulakukan.');
+  }
+};
+
+/* ================= TERJEMAHAN ================= */
+const EN = {
+  'atau masuk dengan': 'or log in with', 'atau daftar dengan': 'or sign up with', 'Lanjutkan dengan Google': 'Continue with Google', 'Daftar dengan Google': 'Sign up with Google', 'Login Google gagal. Coba lagi.': 'Google sign-in failed. Try again.', 'Login Google dibatalkan.': 'Google sign-in cancelled.', 'Tidak bisa memuat Google. Periksa koneksi.': 'Could not load Google. Check your connection.', 'Tidak ada koneksi internet.': 'No internet connection.', 'Gunakan email Google (@gmail.com).': 'Use a Google email (@gmail.com).', 'Mode simulasi: tanpa verifikasi Google. Isi GOOGLE_CLIENT_ID di kode untuk login sungguhan.': 'Simulation mode: no Google verification. Set GOOGLE_CLIENT_ID in the code for real sign-in.',
+  'Lompat ke layar:': 'Jump to screen:', 'Lanjut sebagai Tamu': 'Continue as Guest', 'Masuk': 'Log in', 'Daftar': 'Sign up', 'Masuk sebagai Tamu': 'Continue as Guest',
+  'Selamat Datang di': 'Welcome to', 'Masuk untuk melanjutkan perjalananmu': 'Log in to continue your journey', 'Email atau Username': 'Email or username', 'Lupa password?': 'Forgot password?',
+  'Belum punya akun?': "Don't have an account?", 'Sudah punya akun?': 'Already have an account?', 'Buat Akun': 'Create Account', 'Gabung dan mulai terhubung dengan duniamu': 'Join and start connecting with your world',
+  'Nama lengkap': 'Full name', 'Konfirmasi password': 'Confirm password', 'Password (min. 6 karakter)': 'Password (min. 6 chars)', 'Saya setuju dengan Syarat & Ketentuan': 'I agree to the Terms & Conditions',
+  'Cari orang, postingan, #hashtag...': 'Search people, posts, #hashtags...', 'Komunitas': 'Communities', 'Video': 'Video', 'Notifikasi': 'Notifications', 'Asisten AI': 'AI Assistant',
+  'Pesan': 'Messages', 'Cari pesan...': 'Search messages...', 'Tulis pesan...': 'Write a message...', 'Cari komunitas...': 'Search communities...', 'Buat Komunitasmu': 'Create your community',
+  'Kumpulkan orang-orang dengan minat yang sama!': 'Gather people with shared interests!', 'Buat': 'Create', 'Edit Profil': 'Edit Profile', 'Simpan': 'Save', 'Ganti sampul': 'Change cover', 'Username': 'Username', 'Bio': 'Bio',
+  'Creator Studio': 'Creator Studio', 'Pengaturan': 'Settings', 'Cari pengaturan...': 'Search settings...', 'KYNEX Premium': 'KYNEX Premium', 'Nikmati fitur eksklusif': 'Enjoy exclusive features',
+  'Keluar': 'Log out', 'Privasi & Keamanan': 'Privacy & Security', 'Nikmati pengalaman lebih': 'Enjoy a fuller,', 'lengkap dan eksklusif': 'more exclusive experience', 'Upgrade Sekarang': 'Upgrade Now',
+  'Batalkan Premium': 'Cancel Premium', 'Simulasi: tidak ada pembayaran sungguhan.': 'Simulation: no real payment.', 'Marketplace': 'Marketplace', 'Cari produk...': 'Search products...',
+  'Buat Postingan': 'Create Post', 'Posting': 'Post', 'Apa yang sedang kamu pikirkan? Pakai #hashtag ya': "What's on your mind? Use #hashtags", '📷 Foto/Video': '📷 Photo/Video', '✨ Saran Caption': '✨ Caption idea',
+  'Postingan': 'Posts', 'Tulis komentar...': 'Write a comment...', 'Tanpa komunitas': 'No community', 'Cerita Anda': 'Your story', 'Untuk Anda': 'For You', 'Mengikuti': 'Following', 'Pengikut': 'Followers',
+  'Semua': 'All', 'Foto': 'Photo', 'Teks': 'Text', 'Belum dibaca': 'Unread', 'Bergabung': 'Joined', 'Teknologi': 'Technology', 'Hobi': 'Hobby', 'Game': 'Games', 'Musik': 'Music', 'Lainnya': 'Other',
+  'Ringkasan': 'Overview', 'Konten': 'Content', 'Audiens': 'Audience', 'Monetisasi': 'Monetization', 'Simpan_': 'Saved',
+  'Belum ada postingan': 'No posts yet', 'Belum ada konten': 'No content yet', 'Belum ada creator.': 'No creators yet.', 'Belum ada hashtag.': 'No hashtags yet.', 'Hashtag Trending': 'Trending Hashtags', 'Top Creator': 'Top Creators',
+  'Belum ada pesan': 'No messages yet', 'Mulai percakapan dengan temanmu.': 'Start a conversation with a friend.', 'Belum ada komunitas': 'No communities yet', 'Gabung atau buat komunitas pertamamu.': 'Join or create your first community.',
+  'Gabung': 'Join', 'Bergabung ✓': 'Joined ✓', 'anggota': 'members', 'Ikuti': 'Follow', 'Pesan_': 'Message', 'Kamu': 'You', 'Baru saja': 'Just now', 'menit lalu': 'min ago', 'jam lalu': 'h ago', 'hari lalu': 'd ago',
+  'Masuk dulu ya': 'Please log in', 'Fitur ini butuh akun KYNEX.': 'This feature needs a KYNEX account.', 'Batal': 'Cancel', 'Hapus': 'Delete', 'Blokir': 'Block', 'Tidak ada hasil.': 'No results.',
+  'Disimpan': 'Saved', 'Dihapus dari simpanan': 'Removed from saved', 'Teks disalin': 'Text copied', 'Tidak bisa menyalin': 'Could not copy', 'Lihat profil': 'View profile', 'Hapus postingan': 'Delete post',
+  'Hapus postingan ini?': 'Delete this post?', 'Postingan dihapus': 'Post deleted', 'Laporkan postingan': 'Report post', 'Blokir pengguna': 'Block user', 'Alasan laporan': 'Report reason',
+  'Laporan terkirim. Postingan disembunyikan.': 'Report sent. Post hidden.', 'Pengguna diblokir': 'User blocked', 'Spam': 'Spam', 'Konten tidak pantas': 'Inappropriate content', 'Ujaran kebencian': 'Hate speech', 'Penipuan': 'Scam',
+  'Ikuti orang untuk melihat postingan mereka di sini.': 'Follow people to see their posts here.', 'Buat postingan pertamamu lewat tombol +.': 'Create your first post with the + button.',
+  'Konten untuk dijelajahi akan muncul di sini.': 'Content to explore will appear here.', 'Orang': 'People', 'Postingan_': 'Posts', 'Kamu masuk sebagai tamu. Daftar untuk fitur lengkap ✨': "You're a guest. Sign up for full features ✨",
+  'Belum ada bio.': 'No bio yet.', 'Belum ada video': 'No videos yet', 'Video akan muncul di sini.': 'Videos will appear here.', 'Belum ada simpanan': 'Nothing saved', 'Postingan yang kamu simpan akan muncul di sini.': 'Posts you save will appear here.',
+  'Postingan akan muncul di sini.': 'Posts will appear here.', 'Total Tayangan (7 hari)': 'Total Views (7 days)', 'Like': 'Likes', 'Komentar': 'Comments', 'Pengikut Baru': 'New Followers', 'Aktivitas Terbaru': 'Recent Activity',
+  'Belum ada aktivitas': 'No activity yet', 'Aktivitas dari audiensmu akan tampil di sini.': 'Activity from your audience will show here.', 'Total Postingan': 'Total Posts', 'Konten Terbaik': 'Top Content', 'suka': 'likes', 'komentar': 'comments', 'tayangan': 'views',
+  '(tanpa teks)': '(no text)', 'Konten terbaikmu akan tampil di sini.': 'Your top content will show here.', 'Total Pengikut': 'Total Followers', 'Pengikut Terbaru': 'Latest Followers', 'Belum ada pengikut': 'No followers yet',
+  'Pengikutmu akan tampil di sini.': 'Your followers will show here.', 'Total Penjualan': 'Total Sales', 'Pesanan': 'Orders', 'Produk': 'Products', 'Aktif': 'Active', 'Tidak': 'No', 'Pesanan Terbaru': 'Latest Orders',
+  'Belum ada pesanan': 'No orders yet', 'Pesanan produkmu akan tampil di sini.': 'Orders for your products will show here.',
+  'Akun & Profil': 'Account & Profile', 'Kelola akun Anda': 'Manage your account', 'Atur keamanan akun': 'Manage account security', 'Kelola notifikasi': 'Manage notifications', 'Tampilan': 'Appearance',
+  'Atur tema dan tampilan': 'Theme and display', 'Bahasa': 'Language', 'Pilih bahasa aplikasi': 'Choose app language', 'Pasang Aplikasi': 'Install App', 'Tambahkan KYNEX ke layar utama': 'Add KYNEX to home screen',
+  'Bantuan': 'Help', 'Pusat bantuan & FAQ': 'Help center & FAQ', 'Tentang KYNEX': 'About KYNEX', 'Hapus Semua Data': 'Erase All Data', 'Reset aplikasi di perangkat ini': 'Reset the app on this device', 'Pengaturan tidak ditemukan.': 'No settings found.',
+  'Verifikasi dua langkah (PIN)': 'Two-step verification (PIN)', 'Minta PIN 4 digit setiap kali masuk': 'Ask for a 4-digit PIN on every login', 'Ganti password': 'Change password', 'Perbarui password akunmu': 'Update your account password',
+  'Akun diblokir': 'Blocked accounts', 'akun': 'accounts', 'Hapus akun': 'Delete account', 'Hapus akun dan semua kontenmu': 'Delete your account and all content',
+  'Data tersimpan di perangkat ini saja. Tidak ada server, jadi password tidak bisa direset dari jauh.': 'Data is stored on this device only. There is no server, so passwords cannot be reset remotely.',
+  'Tanpa Iklan': 'No Ads', 'Lencana 👑 di profil': '👑 badge on profile', 'Stiker Premium di chat': 'Premium stickers in chat', 'Dukungan Prioritas': 'Priority Support', 'Premium Aktif ✓': 'Premium Active ✓',
+  'menyukai postingan kamu': 'liked your post', 'berkomentar': 'commented', 'mulai mengikuti kamu': 'started following you', 'membeli': 'bought', 'bergabung ke': 'joined',
+  'Belum ada notifikasi': 'No notifications yet', 'Suka, komentar, dan pengikut baru akan muncul di sini.': 'Likes, comments and new followers will appear here.', 'Unggah video pertamamu dari tombol +.': 'Upload your first video with the + button.',
+  'Produk tidak ditemukan.': 'No products found.', 'Belum ada produk': 'No products yet', 'Jual produk pertamamu dengan tombol +.': 'Sell your first product with the + button.', 'Belum ada komentar.': 'No comments yet.',
+  'Asisten lokal berbasis aturan': 'Local rule-based assistant', 'Kirim pesan pertama ke': 'Send the first message to', 'Komunitas tidak ditemukan.': 'No communities found.', 'Jadilah yang pertama memposting di komunitas ini.': 'Be the first to post in this community.',
+  'Halo! Ada yang bisa kubantu? 😊': 'Hi! How can I help? 😊', 'Hai! Mau bikin caption atau cari ide konten?': 'Hey! Want a caption or content ideas?', 'Sama-sama! 💜': "You're welcome! 💜",
+  'Maaf, aku belum paham. Ketik "bantuan" untuk melihat yang bisa kulakukan.': 'Sorry, I don\'t understand yet. Type "help" to see what I can do.', 'Kata kunci': 'Keywords', 'hari ini': 'today',
+  'Tempel teks yang lebih panjang setelah kata "ringkas".': 'Paste longer text after the word "summarize".',
+  'Halo! Aku asisten KYNEX 🤖 Coba ketik:\n• "caption liburan"\n• "hashtag kuliner"\n• "ide konten"\n• "ringkas <teks panjang>"\nAku berjalan lokal di perangkatmu, tanpa internet.': 'Hi! I\'m the KYNEX assistant 🤖 Try typing:\n• "caption holiday"\n• "hashtag food"\n• "content ideas"\n• "summarize <long text>"\nI run locally on your device, no internet needed.'
+};
+function applyLang() {
+  document.documentElement.lang = LANG;
+  I18N.forEach(x => { if (x.node) x.node.nodeValue = x.lead + t(x.orig) + x.trail; else x.el.setAttribute(x.attr, t(x.orig)); });
+}
+const I18N = [];
+function collectI18N() {
+  const w = document.createTreeWalker($('#phone'), NodeFilter.SHOW_TEXT);
+  let n; while ((n = w.nextNode())) { const v = n.nodeValue; const o = v.trim(); if (!o || !EN[o] || n.parentElement.closest('script,style')) continue; I18N.push({ node: n, orig: o, lead: v.match(/^\s*/)[0], trail: v.match(/\s*$/)[0] }); }
+  $$('#phone [placeholder],#phone [aria-label]').forEach(el => ['placeholder', 'aria-label'].forEach(a => { const o = el.getAttribute(a); if (o && EN[o]) I18N.push({ el, attr: a, orig: o }); }));
+}
+
+/* ================= TEMA ================= */
+function applyTheme() {
+  let th = S.settings.theme; if (th === 'system') th = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  document.documentElement.dataset.theme = th;
+  const mt = document.querySelector('meta[name=theme-color]'); if (mt) mt.content = th === 'light' ? '#f7f5ff' : '#0b0618';
+}
+
+/* ================= AKSI ================= */
+let storyState = null, deferredInstall = null, cartMemo = null;
+
+function doFollow(id) {
+  if (!needUser()) return; const m = me(); const a = S.follows[m.id] = S.follows[m.id] || []; const i = a.indexOf(id);
+  if (i >= 0) { a.splice(i, 1); S.notifs = S.notifs.filter(n => !(n.type === 'follow' && n.from === m.id && n.to === id)); }
+  else { a.push(id); notify(id, 'follow', {}); }
+  save(); refresh(); if (!$('#sheet').hidden && sheetFor) sheetFor();
+}
+let sheetFor = null;
+function toggleJoin(cid) {
+  if (!needUser()) return; const m = me(); const c = S.communities.find(x => x.id === cid); if (!c) return; const i = c.members.indexOf(m.id);
+  if (i >= 0) { if (c.owner === m.id && c.members.length > 1) { toast(t('Pemilik tidak bisa keluar. Hapus komunitas lewat menu ⋯.')); return; } c.members.splice(i, 1); toast(t('Keluar dari') + ' ' + c.name); }
+  else { c.members.push(m.id); notify(c.owner, 'join', { cname: c.name }); toast(t('Bergabung ke') + ' ' + c.name); }
+  save(); refresh();
+}
+function newCommunitySheet() {
+  if (!needUser()) return; const EM = ['💻', '🎮', '🎵', '📷', '🌸', '🏔️', '🍜', '⚽', '📚', '🎨', '🚀', '🐶'];
+  let em = EM[0];
+  openSheet(t('Buat Komunitas'), `<div class="emojis">${EM.map((e, i) => `<button data-e="${e}" class="${i ? '' : 'on'}">${e}</button>`).join('')}</div>
+    <input class="in" id="ncName" maxlength="32" placeholder="${t('Nama komunitas')}"><select class="in" id="ncCat">${COMCATS.map(c => `<option value="${c}">${t(c)}</option>`).join('')}</select>
+    <textarea class="in" id="ncDesc" maxlength="140" placeholder="${t('Deskripsi singkat')}"></textarea><p class="error" id="ncErr" hidden></p><button class="btn primary" id="ncOk">${t('Buat Komunitas')}</button>`, s => {
+    $$('.emojis button', s).forEach(b => b.onclick = () => { $$('.emojis button', s).forEach(x => x.classList.remove('on')); b.classList.add('on'); em = b.dataset.e; });
+    $('#ncOk', s).onclick = () => {
+      const name = $('#ncName', s).value.trim(); const err = $('#ncErr', s);
+      if (name.length < 3) { err.textContent = t('Nama minimal 3 karakter.'); err.hidden = false; return; }
+      if (S.communities.some(c => c.name.toLowerCase() === name.toLowerCase())) { err.textContent = t('Nama komunitas sudah dipakai.'); err.hidden = false; return; }
+      const c = { id: nid(), name, cat: $('#ncCat', s).value, desc: $('#ncDesc', s).value.trim(), emoji: em, owner: me().id, members: [me().id], t: Date.now() };
+      S.communities.push(c); save(); closeSheet(); toast(t('Komunitas dibuat')); go('cdetail', { id: c.id });
+    };
+  });
+}
+function comMenu() {
+  const c = S.communities.find(x => x.id === params.id); if (!c) return; const m = me(); const items = [{ ic: '🔗', label: t('Bagikan'), fn: () => copyText(c.name + ' — KYNEX') }];
+  if (m && c.owner === m.id) items.push({ ic: '🗑️', label: t('Hapus komunitas'), danger: true, fn: () => confirmSheet(t('Hapus komunitas ini?'), t('Hapus'), () => { S.posts.forEach(p => { if (p.cid === c.id) p.cid = null; }); S.communities = S.communities.filter(x => x.id !== c.id); save(); toast(t('Komunitas dihapus')); back(); }) });
+  else if (m && c.members.includes(m.id)) items.push({ ic: '🚪', label: t('Keluar komunitas'), fn: () => toggleJoin(c.id) });
+  actionSheet(c.name, items);
+}
+function newChatSheet() {
+  if (!needUser()) return; const m = me();
+  const draw = q => {
+    const list = [AI, ...S.users.filter(u => u.id !== m.id && userVisible(u))].filter(u => (u.name + u.username).toLowerCase().includes(q));
+    return list.map(u => `<div class="urow" data-act="openchat" data-peer="${u.id}">${avatar(u)}<div class="meta"><b>${esc(u.name)}</b><span>${u.isAI ? t('Asisten AI') : '@' + esc(u.username)}</span></div></div>`).join('') || `<p class="empty">${t('Tidak ada hasil.')}</p>`;
+  };
+  openSheet(t('Pesan baru'), `<label class="field search"><i data-icon="search"></i><input id="ncq" placeholder="${t('Cari orang...')}"></label><div id="ncl">${draw('')}</div>`, s => { $('#ncq', s).oninput = e => { $('#ncl', s).innerHTML = draw(e.target.value.trim().toLowerCase()); }; });
+}
+function sendMsg(peer, text, sticker) {
+  const m = me(); if (!m || !text) return; const key = ck(m.id, peer);
+  const c = S.convos[key] = S.convos[key] || { msgs: [], read: {} };
+  c.msgs.push({ id: nid(), from: m.id, text, t: Date.now(), sticker: !!sticker }); c.read[m.id] = Date.now(); save();
+  if (cur === 'convo' && params.peer === peer) renderConvo();
+  if (peer === 'ai') {
+    setTimeout(() => {
+      if (!me() || me().id !== m.id) return; const c2 = S.convos[key]; if (!c2) return;
+      c2.msgs.push({ id: nid(), from: 'ai', text: sticker ? '😄' : AIB.reply(text), t: Date.now() });
+      if (cur === 'convo' && params.peer === 'ai') c2.read[m.id] = Date.now(); save(); if (cur === 'convo' && params.peer === 'ai') renderConvo(); updateBadges();
+    }, 500 + Math.random() * 500);
+  }
+}
+function stickerSheet() {
+  const m = me(); const free = ['😀', '😍', '🥳', '👍', '🔥', '😂', '😭', '🙏', '💜', '🎉'], prem = ['🦄', '👑', '💎', '🚀', '🌈', '🪩', '🧿', '🐉', '🌟', '🎭'];
+  openSheet(t('Stiker'), `<div class="stickers">${free.map(s => `<button data-s="${s}">${s}</button>`).join('')}</div><h4 class="sec">👑 ${t('Stiker Premium')}${m.premium ? '' : ' 🔒'}</h4><div class="stickers" style="${m.premium ? '' : 'opacity:.45'}">${prem.map(s => `<button data-s="${s}" data-p="1">${s}</button>`).join('')}</div>`, s => {
+    $$('.stickers button', s).forEach(b => b.onclick = () => { if (b.dataset.p && !me().premium) { closeSheet(); toast(t('Stiker ini khusus Premium 👑')); return; } closeSheet(); sendMsg(params.peer, b.dataset.s, true); });
+  });
+}
+
+/* ----- Cerita ----- */
+function addStorySheet() {
+  if (!needUser()) return; const BG = ['#6d28d9', '#db2777', '#0ea5e9', '#16a34a', '#ea580c', '#111827']; let bg = BG[0];
+  openSheet(t('Tambah Cerita'), `<button class="sheet-item" id="stImg"><span>🖼️</span>${t('Foto dari galeri')}</button><label class="lbl">${t('Atau cerita teks')}</label><textarea class="in" id="stTxt" maxlength="140" placeholder="${t('Tulis sesuatu...')}"></textarea>
+    <div class="bgpick">${BG.map((c, i) => `<button data-c="${c}" class="${i ? '' : 'on'}" style="background:${c}"></button>`).join('')}</div><button class="btn primary" id="stOk">${t('Bagikan Cerita')}</button>`, s => {
+    $$('.bgpick button', s).forEach(b => b.onclick = () => { $$('.bgpick button', s).forEach(x => x.classList.remove('on')); b.classList.add('on'); bg = b.dataset.c; });
+    $('#stImg', s).onclick = async () => { const f = await pickFile('image/*'); if (!f) return; const k = await putMedia(await prepImage(f, 1080)); S.stories.push({ id: nid(), uid: me().id, t: Date.now(), type: 'image', media: k }); save(); closeSheet(); toast(t('Cerita dibagikan')); refresh(); };
+    $('#stOk', s).onclick = () => { const x = $('#stTxt', s).value.trim(); if (!x) { toast(t('Tulis sesuatu dulu.')); return; } S.stories.push({ id: nid(), uid: me().id, t: Date.now(), type: 'text', text: x, bg }); save(); closeSheet(); toast(t('Cerita dibagikan')); refresh(); };
+  });
+}
+function openStory(uid) {
+  const m = me(); const list = activeStories(uid); if (!list.length) { if (m && uid === m.id) addStorySheet(); return; }
+  const seen = S.seen[m.id] || {}; let i = list.findIndex(s => !seen[s.id]); if (i < 0) i = 0; storyState = { uid, list, i, timer: null }; showStory();
+}
+function showStory() {
+  const st = storyState; if (!st) return; const s = st.list[st.i]; const m = me(); const u = U(st.uid); const v = $('#storyView');
+  clearTimeout(st.timer); (S.seen[m.id] = S.seen[m.id] || {})[s.id] = 1; save();
+  const body = s.type === 'image' && mu(s.media) ? `<img src="${mu(s.media)}" alt="">` : `<div class="sv-text" style="background:${esc(s.bg || '#6d28d9')};width:100%;height:100%;display:grid;place-items:center">${esc(s.text || '')}</div>`;
+  v.innerHTML = `<div class="sv-bars">${st.list.map((x, j) => `<i class="${j < st.i ? 'done' : j === st.i ? 'run' : ''}"><b></b></i>`).join('')}</div>
+    <div class="sv-head">${avatar(u, 'sm')}<div><b>${esc(u.name)}</b><span>${timeAgo(s.t)}</span></div>${m.id === s.uid ? `<button class="x" data-sv="del" aria-label="Hapus">🗑️</button>` : ''}<button class="x" style="${m.id === s.uid ? 'margin-left:0' : ''}" data-sv="close" aria-label="Tutup">✕</button></div>
+    <div class="sv-body">${body}<div class="sv-tap l" data-sv="prev"></div><div class="sv-tap r" data-sv="next"></div></div>`;
+  v.hidden = false; st.timer = setTimeout(() => storyNav(1), 5000);
+}
+function storyNav(d) { const st = storyState; if (!st) return; st.i += d; if (st.i < 0) st.i = 0; if (st.i >= st.list.length) return closeStory(); showStory(); }
+function closeStory() { if (storyState) clearTimeout(storyState.timer); storyState = null; $('#storyView').hidden = true; refresh(); }
+async function delStory() { const st = storyState; if (!st) return; const s = st.list[st.i]; clearTimeout(st.timer); if (s.media) await dbDel(s.media); S.stories = S.stories.filter(x => x.id !== s.id); save(); st.list.splice(st.i, 1); if (!st.list.length) return closeStory(); if (st.i >= st.list.length) st.i = st.list.length - 1; showStory(); }
+
+/* ----- Marketplace ----- */
+function sellSheet() {
+  if (!needUser()) return; let blob = null;
+  openSheet(t('Jual Produk'), `<button class="sheet-item" id="spImg"><span>🖼️</span><span id="spImgT">${t('Pilih foto produk')}</span></button><input class="in" id="spTitle" maxlength="50" placeholder="${t('Nama produk')}"><input class="in" id="spPrice" type="number" min="0" inputmode="numeric" placeholder="${t('Harga (Rp)')}"><textarea class="in" id="spDesc" maxlength="200" placeholder="${t('Deskripsi')}"></textarea><p class="error" id="spErr" hidden></p><button class="btn primary" id="spOk">${t('Jual')}</button>`, s => {
+    $('#spImg', s).onclick = async () => { const f = await pickFile('image/*'); if (!f) return; blob = await prepImage(f, 800); $('#spImgT', s).textContent = '✓ ' + f.name; };
+    $('#spOk', s).onclick = async () => {
+      const title = $('#spTitle', s).value.trim(), price = Number($('#spPrice', s).value), err = $('#spErr', s);
+      if (title.length < 2 || !(price > 0)) { err.textContent = t('Isi nama produk dan harga yang valid.'); err.hidden = false; return; }
+      const img = blob ? await putMedia(blob) : null;
+      S.products.push({ id: nid(), uid: me().id, title, price, desc: $('#spDesc', s).value.trim(), img, t: Date.now() }); save(); closeSheet(); toast(t('Produk dipublikasikan')); refresh();
+    };
+  });
+}
+function productSheet(pid) {
+  const p = S.products.find(x => x.id === pid); if (!p) return; const m = me(); const own = m && p.uid === m.id; const u = U(p.uid);
+  openSheet(p.title, `<div class="pimg" style="border-radius:14px;height:180px;margin-bottom:12px">${mu(p.img) ? `<img src="${mu(p.img)}" alt="">` : '🛍️'}</div><div class="price" style="font-size:20px;font-weight:800;color:var(--p2)">${rp(p.price)}</div><p style="margin:8px 0;font-size:14px;word-break:break-word">${esc(p.desc || '')}</p><p class="muted small" style="margin-bottom:12px">${t('Penjual')}: ${esc(u.name)}</p>
+    ${own ? `<button class="btn danger" id="pdDel">${t('Hapus produk')}</button>` : `<div class="row-gap"><button class="btn dark grow" id="pdChat">${t('Chat penjual')}</button><button class="btn primary grow" id="pdAdd">${t('Tambah ke keranjang')}</button></div>`}`, s => {
+    if (own) $('#pdDel', s).onclick = () => confirmSheet(t('Hapus produk ini?'), t('Hapus'), async () => { if (p.img) await dbDel(p.img); S.products = S.products.filter(x => x.id !== pid); Object.keys(S.carts).forEach(k => S.carts[k] = S.carts[k].filter(x => x.pid !== pid)); save(); refresh(); });
+    else { $('#pdAdd', s).onclick = () => { if (!needUser()) return; const c = S.carts[m.id] = S.carts[m.id] || []; const it = c.find(x => x.pid === pid); if (it) it.qty++; else c.push({ pid, qty: 1 }); save(); closeSheet(); toast(t('Masuk keranjang')); updateBadges(); }; $('#pdChat', s).onclick = () => { if (!needUser()) return; go('convo', { peer: p.uid }); }; }
+  });
+}
+function cartSheet() {
+  if (!needUser()) return; const m = me();
+  const draw = () => {
+    const c = (S.carts[m.id] = (S.carts[m.id] || []).filter(x => S.products.some(p => p.id === x.pid))); const rows = c.map(x => ({ x, p: S.products.find(p => p.id === x.pid) }));
+    const tot = rows.reduce((a, r) => a + r.p.price * r.x.qty, 0);
+    return rows.length ? rows.map(r => `<div class="cart-row"><div class="pimg">${mu(r.p.img) ? `<img src="${mu(r.p.img)}" alt="">` : '🛍️'}</div><div class="meta"><b>${esc(r.p.title)}</b><span>${rp(r.p.price)}</span></div><div class="qty"><button data-q="-1" data-pid="${r.p.id}">−</button><b>${r.x.qty}</b><button data-q="1" data-pid="${r.p.id}">+</button></div></div>`).join('') + `<div class="total"><span>${t('Total')}</span><span>${rp(tot)}</span></div><button class="btn primary" id="coOk">${t('Checkout')}</button><p class="muted small center" style="margin-top:8px">${t('Simulasi: tidak ada pembayaran sungguhan.')}</p>` : emptyState(t('Keranjang kosong'), t('Tambahkan produk dari Marketplace.'));
+  };
+  const mount = s => {
+    $$('[data-q]', s).forEach(b => b.onclick = () => { const c = S.carts[m.id]; const it = c.find(x => x.pid === b.dataset.pid); it.qty += Number(b.dataset.q); if (it.qty <= 0) c.splice(c.indexOf(it), 1); save(); $('.sheet-body', s).innerHTML = draw(); mount(s); updateBadges(); });
+    const ok = $('#coOk', s); if (ok) ok.onclick = () => {
+      const c = S.carts[m.id]; c.forEach(x => { const p = S.products.find(q => q.id === x.pid); if (!p) return; S.orders.push({ id: nid(), buyer: m.id, seller: p.uid, pid: p.id, title: p.title, price: p.price, qty: x.qty, t: Date.now() }); notify(p.uid, 'order', { title: p.title, qty: x.qty }); });
+      S.carts[m.id] = []; save(); closeSheet(); toast(t('Pesanan dibuat! (simulasi)')); updateBadges();
+    };
+  };
+  openSheet(t('Keranjang'), draw(), mount);
+}
+
+/* ----- Akun & keamanan ----- */
+const validEmail = e => /^\S+@\S+\.\S+$/.test(e);
+async function doRegister() {
+  const name = $('#regName').value.trim(), user = $('#regUser').value.trim().replace(/^@/, ''), email = $('#regEmail').value.trim().toLowerCase(), pw = $('#regPass').value, pw2 = $('#regPass2').value; let err = '';
+  if (!name || !user || !email || !pw || !pw2) err = t('Lengkapi semua kolom dulu ya.');
+  else if (!/^[a-z0-9_.]{3,20}$/i.test(user)) err = t('Username 3–20 karakter (huruf, angka, _ atau .).');
+  else if (!validEmail(email)) err = t('Format email belum benar.');
+  else if (pw.length < 6) err = t('Password minimal 6 karakter.');
+  else if (pw !== pw2) err = t('Konfirmasi password tidak sama.');
+  else if (!$('#regTerms').checked) err = t('Setujui Syarat & Ketentuan untuk melanjutkan.');
+  else if (S.users.some(u => u.username.toLowerCase() === user.toLowerCase()) || user.toLowerCase() === 'kynex.ai') err = t('Username sudah dipakai.');
+  else if (S.users.some(u => u.email === email)) err = t('Email sudah terdaftar.');
+  const box = $('#regError'); box.hidden = !err; box.textContent = err; if (err) return;
+  const u = { id: nid(), name, username: user, email, pass: await hash(pw), bio: '', avatar: null, cover: null, premium: false, pin: null, notif: { like: true, comment: true, follow: true }, views: {}, t: Date.now() };
+  S.users.push(u); S.session = { uid: u.id }; save(); $('#regForm').reset(); toast(t('Akun berhasil dibuat. Selamat datang, ') + name.split(' ')[0] + '!'); startApp();
+}
+async function doLogin() {
+  const id = $('#user').value.trim().replace(/^@/, '').toLowerCase(), pw = $('#pass').value; const box = $('#loginError');
+  const show = m => { box.textContent = m; box.hidden = !m; };
+  if (!id || !pw) return show(t('Isi email/username dan password dulu ya.'));
+  const u = S.users.find(x => x.username.toLowerCase() === id || x.email === id); if (!u || u.pass !== await hash(pw)) return show(t('Username atau password salah.'));
+  show('');
+  const fin = () => { S.session = { uid: u.id }; save(); $('#loginForm').reset(); toast(t('Selamat datang kembali!')); startApp(); };
+  if (u.pin) pinSheet(t('Masukkan PIN'), async v => { if (await hash('pin:' + v) === u.pin) { closeSheet(); fin(); return true; } return false; }); else fin();
+}
+/* ----- Login / daftar dengan Google ----- */
+// Isi dengan OAuth Client ID (tipe "Web application") dari Google Cloud Console agar login Google sungguhan aktif.
+// Tambahkan domain situsmu (mis. https://namamu.vercel.app) ke "Authorized JavaScript origins".
+// Jika dikosongkan, tombol memakai mode simulasi (tanpa verifikasi Google).
+const GOOGLE_CLIENT_ID = '';
+let gsiLoading = null;
+function loadGsi() {
+  if (window.google && google.accounts && google.accounts.oauth2) return Promise.resolve();
+  if (gsiLoading) return gsiLoading;
+  gsiLoading = new Promise((res, rej) => {
+    const sc = document.createElement('script'); sc.src = 'https://accounts.google.com/gsi/client'; sc.async = true;
+    sc.onload = res; sc.onerror = () => { gsiLoading = null; rej(new Error('gsi')); }; document.head.appendChild(sc);
+  });
+  return gsiLoading;
+}
+function googleBusy(on) { $$('[data-act="google"]').forEach(b => b.disabled = on); }
+async function googleAuth() {
+  if (!GOOGLE_CLIENT_ID) return googleSimSheet();
+  if (!navigator.onLine) return toast(t('Tidak ada koneksi internet.'));
+  googleBusy(true);
+  try {
+    await loadGsi();
+    const client = google.accounts.oauth2.initTokenClient({
+      client_id: GOOGLE_CLIENT_ID, scope: 'openid email profile',
+      callback: async resp => {
+        try {
+          if (!resp || resp.error || !resp.access_token) throw new Error('auth');
+          const r = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', { headers: { Authorization: 'Bearer ' + resp.access_token } });
+          if (!r.ok) throw new Error('info'); const p = await r.json();
+          if (!p.email) throw new Error('email');
+          await googleFinish({ email: p.email, name: p.name || p.email.split('@')[0] });
+        } catch (e) { toast(t('Login Google gagal. Coba lagi.')); }
+        googleBusy(false);
+      },
+      error_callback: () => { googleBusy(false); toast(t('Login Google dibatalkan.')); }
+    });
+    client.requestAccessToken({ prompt: 'select_account' });
+  } catch (e) { googleBusy(false); toast(t('Tidak bisa memuat Google. Periksa koneksi.')); }
+}
+function googleSimSheet() {
+  openSheet(t('Lanjutkan dengan Google'), `<p class="muted small" style="margin-bottom:10px">${t('Mode simulasi: tanpa verifikasi Google. Isi GOOGLE_CLIENT_ID di kode untuk login sungguhan.')}</p><input class="in" id="gsName" placeholder="${t('Nama')}"><input class="in" id="gsEmail" type="email" placeholder="Email Google (nama@gmail.com)"><p class="error" id="gsErr" hidden></p><button class="btn primary" id="gsOk">${t('Lanjut')}</button>`, s => {
+    $('#gsOk', s).onclick = async () => {
+      const name = $('#gsName', s).value.trim(), email = $('#gsEmail', s).value.trim().toLowerCase(), er = $('#gsErr', s);
+      const bad = m => { er.textContent = m; er.hidden = false; };
+      if (!validEmail(email)) return bad(t('Format email belum benar.'));
+      if (!/@(gmail|googlemail)\.com$/.test(email)) return bad(t('Gunakan email Google (@gmail.com).'));
+      closeSheet(); await googleFinish({ email, name: name || email.split('@')[0] });
+    };
+  });
+}
+async function googleFinish(p) {
+  const email = p.email.toLowerCase(); let u = S.users.find(x => x.email === email);
+  const enter = (isNew) => { S.session = { uid: u.id }; save(); toast(isNew ? t('Akun berhasil dibuat. Selamat datang, ') + u.name.split(' ')[0] + '!' : t('Selamat datang kembali!')); startApp(); };
+  if (u) {
+    if (u.pin) return pinSheet(t('Masukkan PIN'), async v => { if (await hash('pin:' + v) === u.pin) { closeSheet(); enter(false); return true; } return false; });
+    return enter(false);
+  }
+  let base = email.split('@')[0].toLowerCase().replace(/[^a-z0-9_.]/g, '').slice(0, 16); if (base.length < 3) base = 'user' + (base || '');
+  let user = base, n = 1; while (S.users.some(x => x.username.toLowerCase() === user.toLowerCase()) || user.toLowerCase() === 'kynex.ai') user = base.slice(0, 16) + (++n);
+  u = { id: nid(), name: p.name, username: user, email, pass: await hash('g:' + nid() + Math.random()), google: true, bio: '', avatar: null, cover: null, premium: false, pin: null, notif: { like: true, comment: true, follow: true }, views: {}, t: Date.now() };
+  S.users.push(u); enter(true);
+}
+function pinSheet(title, check) {
+  openSheet(title, `<input class="in pin" id="pinIn" type="password" inputmode="numeric" maxlength="4" placeholder="••••"><p class="error" id="pinErr" hidden>${t('PIN salah.')}</p><button class="btn primary" id="pinOk">${t('Lanjut')}</button>`, s => {
+    const go_ = async () => { const v = $('#pinIn', s).value; if (!/^\d{4}$/.test(v)) { $('#pinErr', s).textContent = t('PIN harus 4 digit.'); $('#pinErr', s).hidden = false; return; } const ok = await check(v); if (ok === false) { $('#pinErr', s).textContent = t('PIN salah.'); $('#pinErr', s).hidden = false; } };
+    $('#pinOk', s).onclick = go_; $('#pinIn', s).onkeydown = e => { if (e.key === 'Enter') go_(); };
+  });
+}
+function forgotSheet() {
+  openSheet(t('Reset password'), `<p class="muted small" style="margin-bottom:10px">${t('Tanpa server: reset dilakukan di perangkat ini. Jika akun memakai PIN, PIN akan diminta.')}</p><input class="in" id="fgEmail" placeholder="Email"><input class="in" id="fgPass" type="password" placeholder="${t('Password baru (min. 6)')}"><input class="in" id="fgPin" type="password" inputmode="numeric" maxlength="4" placeholder="${t('PIN (jika ada)')}"><p class="error" id="fgErr" hidden></p><button class="btn primary" id="fgOk">${t('Reset password')}</button>`, s => {
+    $('#fgOk', s).onclick = async () => {
+      const em = $('#fgEmail', s).value.trim().toLowerCase(), pw = $('#fgPass', s).value, pin = $('#fgPin', s).value, er = $('#fgErr', s); const u = S.users.find(x => x.email === em);
+      const bad = m => { er.textContent = m; er.hidden = false; };
+      if (!u) return bad(t('Email tidak ditemukan.')); if (pw.length < 6) return bad(t('Password minimal 6 karakter.')); if (u.pin && await hash('pin:' + pin) !== u.pin) return bad(t('PIN salah.'));
+      u.pass = await hash(pw); save(); closeSheet(); toast(t('Password diperbarui. Silakan masuk.'));
+    };
+  });
+}
+function changePassSheet() {
+  openSheet(t('Ganti password'), `<input class="in" id="cpOld" type="password" placeholder="${t('Password lama')}"><input class="in" id="cpNew" type="password" placeholder="${t('Password baru (min. 6)')}"><p class="error" id="cpErr" hidden></p><button class="btn primary" id="cpOk">${t('Simpan')}</button>`, s => {
+    $('#cpOk', s).onclick = async () => { const er = $('#cpErr', s), m = me(); const bad = x => { er.textContent = x; er.hidden = false; };
+      if (m.pass !== await hash($('#cpOld', s).value)) return bad(t('Password lama salah.')); if ($('#cpNew', s).value.length < 6) return bad(t('Password minimal 6 karakter.'));
+      m.pass = await hash($('#cpNew', s).value); save(); closeSheet(); toast(t('Password diperbarui.')); };
+  });
+}
+function twoFA() {
+  const m = me();
+  if (m.pin) { pinSheet(t('Masukkan PIN untuk menonaktifkan'), async v => { if (await hash('pin:' + v) === m.pin) { m.pin = null; save(); closeSheet(); toast(t('Verifikasi dua langkah nonaktif')); renderSecurity(); return true; } return false; }); return; }
+  pinSheet(t('Buat PIN 4 digit'), async v => { m.pin = await hash('pin:' + v); save(); closeSheet(); toast(t('Verifikasi dua langkah aktif')); renderSecurity(); return true; });
+}
+function blockedSheet() {
+  const m = me(); const draw = () => { const l = blockedBy(m.id).map(U).filter(Boolean); return l.length ? l.map(u => `<div class="urow">${avatar(u)}<div class="meta"><b>${esc(u.name)}</b><span>@${esc(u.username)}</span></div><button class="fbtn on" data-ub="${u.id}">${t('Buka blokir')}</button></div>`).join('') : `<p class="empty">${t('Tidak ada akun diblokir.')}</p>`; };
+  const mount = s => $$('[data-ub]', s).forEach(b => b.onclick = () => { S.blocks[m.id] = blockedBy(m.id).filter(x => x !== b.dataset.ub); save(); $('.sheet-body', s).innerHTML = draw(); mount(s); renderSecurity(); });
+  openSheet(t('Akun diblokir'), draw(), mount);
+}
+function deleteAccountSheet() {
+  openSheet(t('Hapus akun'), `<p class="muted small" style="margin-bottom:10px">${t('Semua postingan, cerita, pesan, dan produkmu akan dihapus permanen.')}</p><input class="in" id="daPw" type="password" placeholder="Password"><p class="error" id="daErr" hidden>${t('Password salah.')}</p><button class="btn danger" id="daOk">${t('Hapus akun saya')}</button>`, s => {
+    $('#daOk', s).onclick = async () => { const m = me(); if (m.pass !== await hash($('#daPw', s).value)) { $('#daErr', s).hidden = false; return; } closeSheet(); await removeUser(m.id); toast(t('Akun dihapus')); stack = []; go('splash'); };
+  });
+}
+async function removeUser(id) {
+  const keys = []; const u = U(id); if (u) keys.push(u.avatar, u.cover);
+  S.posts.filter(p => p.uid === id).forEach(p => keys.push(p.media)); S.stories.filter(s => s.uid === id).forEach(s => keys.push(s.media)); S.products.filter(p => p.uid === id).forEach(p => keys.push(p.img));
+  S.posts = S.posts.filter(p => p.uid !== id); S.posts.forEach(p => { p.likes = p.likes.filter(x => x !== id); p.comments = p.comments.filter(c => c.uid !== id); });
+  S.stories = S.stories.filter(s => s.uid !== id); S.products = S.products.filter(p => p.uid !== id); S.orders = S.orders.filter(o => o.buyer !== id && o.seller !== id);
+  S.notifs = S.notifs.filter(n => n.to !== id && n.from !== id); S.reports = S.reports.filter(r => r.by !== id);
+  Object.keys(S.follows).forEach(k => { if (k === id) delete S.follows[k]; else S.follows[k] = S.follows[k].filter(x => x !== id); });
+  Object.keys(S.convos).forEach(k => { if (k.split('|').includes(id)) delete S.convos[k]; });
+  S.communities.forEach(c => { c.members = c.members.filter(x => x !== id); }); S.communities = S.communities.filter(c => c.owner !== id || c.members.length);
+  S.communities.forEach(c => { if (c.owner === id) c.owner = c.members[0]; });
+  delete S.carts[id]; delete S.blocks[id]; delete S.saved[id]; delete S.seen[id]; Object.keys(S.blocks).forEach(k => S.blocks[k] = S.blocks[k].filter(x => x !== id));
+  S.users = S.users.filter(x => x.id !== id); S.session = null; save(); for (const k of keys.filter(Boolean)) await dbDel(k);
+}
+function settingsAction(k) {
+  if (k === 'backup') return backupSheet();
+  if (k === 'folders') return foldersSheet();
+  const m = me();
+  if (k === 'edit') return go('editprofile'); if (k === 'security') return go('security');
+  if (k === 'notif') { if (!needUser()) return; const nt = m.notif = m.notif || { like: true, comment: true, follow: true };
+    return openSheet(t('Notifikasi'), [['like', 'Suka'], ['comment', 'Komentar'], ['follow', 'Pengikut baru']].map(([a, b]) => `<div class="sw-row" data-nk="${a}"><span style="flex:1">${t(b)}</span><i class="switch ${nt[a] !== false ? 'on' : ''}"></i></div>`).join(''), s => $$('[data-nk]', s).forEach(r => r.onclick = () => { nt[r.dataset.nk] = !(nt[r.dataset.nk] !== false); save(); $('.switch', r).classList.toggle('on', nt[r.dataset.nk]); })); }
+  if (k === 'theme') return openSheet(t('Tampilan'), [['dark', 'Gelap'], ['light', 'Terang'], ['system', 'Ikuti sistem']].map(([a, b]) => `<div class="radio-row ${S.settings.theme === a ? 'on' : ''}" data-th="${a}"><span>${t(b)}</span><span>${S.settings.theme === a ? '✓' : ''}</span></div>`).join(''), s => $$('[data-th]', s).forEach(r => r.onclick = () => { S.settings.theme = r.dataset.th; save(); applyTheme(); closeSheet(); }));
+  if (k === 'lang') return openSheet(t('Bahasa'), [['id', 'Bahasa Indonesia'], ['en', 'English']].map(([a, b]) => `<div class="radio-row ${LANG === a ? 'on' : ''}" data-lg="${a}"><span>${b}</span><span>${LANG === a ? '✓' : ''}</span></div>`).join(''), s => $$('[data-lg]', s).forEach(r => r.onclick = () => { LANG = S.settings.lang = r.dataset.lg; save(); applyLang(); closeSheet(); buildSide(); refresh(); }));
+  if (k === 'install') { if (deferredInstall) { deferredInstall.prompt(); deferredInstall = null; return; } return openSheet(t('Pasang Aplikasi'), `<p style="font-size:14px;line-height:1.5">${t('Buka halaman ini lewat https (atau localhost), lalu pakai menu browser → "Tambahkan ke layar utama" / "Install app". Butuh file manifest.webmanifest, sw.js, dan icon.svg di folder yang sama.')}</p>`); }
+  if (k === 'help') return openSheet(t('Bantuan'), `<div class="faq"><b>${t('Di mana data saya disimpan?')}</b><p>${t('Hanya di browser perangkat ini. Tidak ada server.')}</p><b>${t('Kenapa pesan tidak terkirim ke orang lain?')}</b><p>${t('Pesan hanya antar akun di perangkat yang sama. Untuk chat antar perangkat dibutuhkan server.')}</p><b>${t('Bagaimana cara pakai AI?')}</b><p>${t('Buka Explore → Asisten AI, lalu ketik "bantuan".')}</p><b>${t('Apakah Premium berbayar?')}</b><p>${t('Tidak, ini simulasi tanpa pembayaran.')}</p></div>`);
+  if (k === 'about') return openSheet('KYNEX', `<p style="font-size:14px;line-height:1.5">KYNEX 2.0.0 — Connect Your World.<br>${t('Prototipe aplikasi sosial yang berjalan sepenuhnya di browser.')}</p>`);
+  if (k === 'reset') return confirmSheet(t('Hapus SEMUA data di perangkat ini?'), t('Hapus semua'), async () => { try { localStorage.removeItem(KEY); if (idb) idb.close(); await new Promise(r => { const q = indexedDB.deleteDatabase('kynex-media'); q.onsuccess = q.onerror = q.onblocked = () => r(); }); } catch (e) { } location.reload(); });
+}
+function plusSheet() {
+  actionSheet(t('Buat Baru'), [
+    { ic: '📝', label: t('Buat Postingan'), fn: () => go('compose') }, { ic: '⭕', label: t('Tambah Cerita'), fn: () => addStorySheet() }, { ic: '👥', label: t('Buat Komunitas'), fn: () => go('community') || setTimeout(newCommunitySheet, 50) },
+    { ic: '🛍️', label: t('Jual Produk'), fn: () => go('market') || setTimeout(sellSheet, 50) }, { ic: '📊', label: 'Creator Studio', fn: () => go('studio') }, { ic: '📊', label: t('Cerita Polling'), fn: () => pollStorySheet() }, { ic: '🔴', label: t('Mulai Live'), fn: () => startLive() }, { ic: '🗓️', label: t('Jadwalkan Postingan'), fn: () => scheduleSheet() }, { ic: '✨', label: 'KYNEX AI', fn: () => aiToolsSheet() }, { ic: '👑', label: 'KYNEX Premium', fn: () => go('premium') }]);
+}
+function flist(kind, uid) {
+  const draw = () => { const l = kind === 'followers' ? followersOf(uid) : (S.follows[uid] || []).map(U).filter(Boolean); const v = l.filter(userVisible); return v.length ? v.map(userRow).join('') : `<p class="empty">${t('Belum ada.')}</p>`; };
+  openSheet(kind === 'followers' ? t('Pengikut') : t('Mengikuti'), draw());
+  sheetFor = () => { const b = $('#sheet .sheet-body'); if (b) b.innerHTML = draw(); };
+}
+
+
+/* ================= EVENT, FORM & INIT ================= */
+const sideNames = { splash: 'Splash', login: 'Login', register: 'Daftar', home: 'Beranda', explore: 'Explore', chat: 'Pesan', community: 'Komunitas', videos: 'Video', market: 'Marketplace', profile: 'Profil', studio: 'Creator Studio', settings: 'Pengaturan', premium: 'Premium' };
+function buildSide() { $('#sideLinks').innerHTML = Object.entries(sideNames).map(([k, v]) => `<button data-go="${k}">${t(v)}</button>`).join(''); }
+/* ----- Mention, bisukan, cadangan data ----- */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('[data-mention]'); if (!a) return; e.preventDefault(); e.stopPropagation();
+  const u = S.users.find(x => x.username.toLowerCase() === a.dataset.mention.toLowerCase());
+  u ? go('profile', { uid: u.id }) : toast(t('Pengguna tidak ditemukan'));
+}, true);
+function muteUser(id) {
+  const m = me(); if (!m) return toast(t('Masuk dulu ya.')); m.muted = m.muted || [];
+  if (!m.muted.includes(id)) m.muted.push(id); save(); toast(t('Pengguna dibisukan')); refresh();
+}
+function backupSheet() {
+  const m = me(); const mu_ = ((m && m.muted) || []).map(U).filter(Boolean);
+  openSheet(t('Cadangan Data'), `<p class="muted small" style="margin-bottom:10px">${t('Ekspor menyimpan akun, postingan, dan chat ke file JSON. Foto/video tidak ikut diekspor.')}</p><button class="btn primary" id="bkExp">${t('Ekspor Data')}</button><button class="btn ghost" id="bkImp">${t('Impor Data')}</button><input type="file" id="bkFile" accept="application/json,.json" hidden>${mu_.length ? `<h4 class="sec">${t('Akun dibisukan')}</h4>` + mu_.map(u => `<div class="urow"><div class="meta"><b>${esc(u.name)}</b><span>@${esc(u.username)}</span></div><button class="fbtn on" data-un="${u.id}">${t('Bunyikan')}</button></div>`).join('') : ''}`, sh => {
+    $('#bkExp', sh).onclick = () => {
+      const d = JSON.stringify(Object.assign({}, S, { session: null }));
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([d], { type: 'application/json' }));
+      a.download = 'kynex-backup-' + new Date().toISOString().slice(0, 10) + '.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast(t('Data diekspor'));
+    };
+    $('#bkImp', sh).onclick = () => $('#bkFile', sh).click();
+    $('#bkFile', sh).onchange = async ev => {
+      const f = ev.target.files[0]; if (!f) return;
+      try {
+        const d = JSON.parse(await f.text()); if (!d || !Array.isArray(d.users) || !Array.isArray(d.posts)) throw 0;
+        closeSheet(); confirmSheet(t('Impor akan menggantikan semua data di perangkat ini. Lanjut?'), t('Impor'), () => { const ses = S.session; S = Object.assign(defaults(), d, { session: ses }); save(); toast(t('Data diimpor')); startApp(); }, true);
+      } catch (e) { toast(t('File cadangan tidak valid.')); }
+    };
+    $$('[data-un]', sh).forEach(b => b.onclick = () => { m.muted = m.muted.filter(x => x !== b.dataset.un); save(); closeSheet(); toast(t('Pengguna dibunyikan')); refresh(); });
+  });
+}
+function startApp() { stack = []; pfFor = null; go('home'); }
+/* ----- Reaksi/balas chat, repost, KYNEX AI, onboarding ----- */
+let pendingReply = null;
+function msgQuote(c, x) { if (!x.reply) return ''; const o = c.msgs.find(y => y.id === x.reply); return o ? `<span class="quote">${esc((o.text || '').slice(0, 60))}</span>` : ''; }
+function setReply(c, id) {
+  pendingReply = id; $('#replybar') && $('#replybar').remove(); const o = c.msgs.find(y => y.id === id); if (!o) return;
+  const b = document.createElement('div'); b.className = 'replybar'; b.id = 'replybar'; b.innerHTML = `<span>↩ ${esc((o.text || '').slice(0, 60))}</span><button aria-label="Batal">✕</button>`;
+  b.querySelector('button').onclick = () => { pendingReply = null; b.remove(); }; $('.composer', $('[data-screen="convo"]')).before(b);
+}
+document.addEventListener('click', e => {
+  const el = e.target.closest && e.target.closest('#msgs .msg[data-mid]'); if (!el) return; const m = me(); if (!m) return;
+  const key = ck(m.id, params.peer), c = S.convos[key]; if (!c) return; const x = c.msgs.find(y => y.id === el.dataset.mid); if (!x) return;
+  actionSheet('', ['❤️', '😂', '👍', '😮', '😢', '🔥'].map(r => ({ ic: r, label: x.react === r ? t('Hapus reaksi') : t('Reaksi'), fn: () => { x.react = x.react === r ? '' : r; save(); renderConvo(); } })).concat([{ ic: '↩', label: t('Balas'), fn: () => setReply(c, x.id) }]));
+});
+{ const _send = sendMsg; sendMsg = function (peer, text, sticker) {
+  const rp = pendingReply; pendingReply = null; $('#replybar') && $('#replybar').remove(); _send(peer, text, sticker);
+  const m = me(); if (rp && m && text) { const c = S.convos[ck(m.id, peer)]; const last = c && c.msgs.filter(y => y.from === m.id).pop(); if (last) { last.reply = rp; save(); renderConvo(); } }
+}; }
+function repost(pid) {
+  const m = me(); if (!m) return toast(t('Masuk dulu ya.')); const p = S.posts.find(x => x.id === pid), u = p && U(p.uid); if (!p) return;
+  const txt = '🔁 @' + u.username + (p.text ? ': ' + p.text : '');
+  S.posts.push({ id: nid(), uid: m.id, t: Date.now(), text: txt.slice(0, 500), type: 'text', media: null, cid: null, likes: [], comments: [], views: 0 }); save(); toast(t('Dibagikan ulang')); refresh();
+}
+function aiToolsSheet() {
+  openSheet('✨ KYNEX AI', `<div class="chips" id="aiTabs"><button class="chip on" data-k="cap">${t('Caption')}</button><button class="chip" data-k="idea">${t('Ide Konten')}</button><button class="chip" data-k="sum">${t('Ringkas Komentar')}</button></div><input class="in" id="aiIn" placeholder="${t('Topik singkat...')}"><button class="btn primary" id="aiGo">${t('Buat')}</button><div class="aiout" id="aiOut" hidden></div><button class="btn dark" id="aiCopy" hidden>${t('Salin')}</button>`, sh => {
+    let k = 'cap'; const out = $('#aiOut', sh), cp = $('#aiCopy', sh);
+    $$('#aiTabs .chip', sh).forEach(b => b.onclick = () => { k = b.dataset.k; $$('#aiTabs .chip', sh).forEach(x => x.classList.toggle('on', x === b)); $('#aiIn', sh).hidden = k === 'sum'; });
+    $('#aiGo', sh).onclick = () => {
+      let r = '';
+      if (k === 'cap') r = AIB.caption($('#aiIn', sh).value.trim() || 'hari ini'); else if (k === 'idea') r = AIB.ideas();
+      else { const m = me(); const mine = S.posts.filter(p => m && p.uid === m.id); const cm = mine.flatMap(p => p.comments); r = cm.length ? `${cm.length} ${t('komentar di')} ${mine.length} ${t('postingan')}. ${t('Paling ramai')}: "${((mine.sort((a, b) => b.comments.length - a.comments.length)[0].text) || '').slice(0, 50)}"` : t('Belum ada komentar untuk diringkas.'); }
+      out.textContent = r; out.hidden = false; cp.hidden = false;
+    };
+    cp.onclick = () => { try { navigator.clipboard.writeText(out.textContent); toast(t('Disalin')); } catch (e) { toast(t('Gagal menyalin')); } };
+  });
+}
+function onboardSheet() {
+  const all = ['Musik', 'Gaming', 'Travel', 'Kuliner', 'Fotografi', 'Teknologi', 'Olahraga', 'Film', 'Fashion', 'Seni']; const pick_ = new Set();
+  openSheet(t('Pilih minatmu'), `<p class="muted small" style="margin-bottom:10px">${t('Kami sarankan komunitas yang cocok untukmu.')}</p><div class="chips" style="flex-wrap:wrap" id="obC">${all.map(a => `<button class="chip" data-v="${a}">${a}</button>`).join('')}</div><button class="btn primary" id="obOk">${t('Selesai')}</button>`, sh => {
+    $$('#obC .chip', sh).forEach(b => b.onclick = () => { pick_.has(b.dataset.v) ? pick_.delete(b.dataset.v) : pick_.add(b.dataset.v); b.classList.toggle('on'); });
+    $('#obOk', sh).onclick = () => { const m = me(); if (m) { m.interests = [...pick_]; S.communities.forEach(c => { if (m.interests.some(i => c.name.toLowerCase().includes(i.toLowerCase())) && !c.members.includes(m.id)) c.members.push(m.id); }); save(); } closeSheet(); toast(t('Minat disimpan')); refresh(); };
+  });
+}
+{ const _sa = startApp; startApp = function () { _sa(); const m = me(); if (m && !m.interests) setTimeout(onboardSheet, 500); }; }
+/* ----- Folder tersimpan, polling story, live, jadwal, statistik ----- */
+const fold = () => { const m = me(); S.folders = S.folders || {}; return m ? (S.folders[m.id] = S.folders[m.id] || {}) : {}; };
+function folderPick(pid) {
+  const f = fold(), names = Object.keys(f);
+  openSheet(t('Simpan ke folder'), names.map(n => `<button class="sheet-item" data-f="${esc(n)}"><span>📁</span>${esc(n)} ${f[n].includes(pid) ? '✓' : ''}</button>`).join('') + `<input class="in" id="fNew" maxlength="24" placeholder="${t('Nama folder baru')}"><button class="btn primary" id="fAdd">${t('Buat dan simpan')}</button>`, sh => {
+    const put = n => { const a = fold()[n] = fold()[n] || []; const i = a.indexOf(pid); i < 0 ? a.push(pid) : a.splice(i, 1); save(); closeSheet(); toast(t('Folder diperbarui')); };
+    $$('[data-f]', sh).forEach(b => b.onclick = () => put(b.dataset.f));
+    $('#fAdd', sh).onclick = () => { const n = $('#fNew', sh).value.trim(); if (!n) return toast(t('Beri nama folder.')); put(n); };
+  });
+}
+function foldersSheet() {
+  if (!needUser()) return; const f = fold(), names = Object.keys(f);
+  openSheet(t('Folder Tersimpan'), names.length ? names.map(n => `<button class="sheet-item" data-f="${esc(n)}"><span>📁</span>${esc(n)} · ${f[n].filter(id => S.posts.some(p => p.id === id)).length}</button>`).join('') : `<p class="empty">${t('Belum ada folder. Buat lewat menu ⋯ postingan.')}</p>`, sh => {
+    $$('[data-f]', sh).forEach(b => b.onclick = () => { const n = b.dataset.f, ps = f[n].map(id => S.posts.find(p => p.id === id)).filter(Boolean);
+      openSheet('📁 ' + n, ps.length ? ps.map(p => `<button class="sheet-item" data-p="${p.id}"><span>📝</span>${esc((p.text || t('Media')).slice(0, 40))}</button>`).join('') : `<p class="empty">${t('Folder kosong.')}</p>`, s2 => $$('[data-p]', s2).forEach(x => x.onclick = () => { closeSheet(); go('post', { id: x.dataset.p }); })); });
+  });
+}
+function postStats(pid) {
+  const p = S.posts.find(x => x.id === pid); if (!p) return; const sv = Object.values(S.saved).filter(a => a.includes(pid)).length, v = p.views || 0, eng = v ? Math.round((p.likes.length + p.comments.length + sv) / v * 100) : 0;
+  openSheet(t('Statistik postingan'), `<div class="stat-grid"><div><span class="muted small">${t('Dilihat')}</span><b>${fmt(v)}</b></div><div><span class="muted small">Like</span><b>${fmt(p.likes.length)}</b></div><div><span class="muted small">${t('Komentar')}</span><b>${fmt(p.comments.length)}</b></div><div><span class="muted small">${t('Disimpan')}</span><b>${fmt(sv)}</b></div></div><p class="muted small">${t('Tingkat interaksi')}: ${Math.min(eng, 100)}%</p>`);
+}
+function pollStorySheet() {
+  if (!needUser()) return; const BG = ['#6d28d9', '#db2777', '#0ea5e9', '#16a34a']; const bg = pick(BG);
+  openSheet(t('Cerita Polling'), `<input class="in" id="pQ" maxlength="100" placeholder="${t('Pertanyaan')}"><input class="in" id="pA" maxlength="30" placeholder="${t('Pilihan 1')}"><input class="in" id="pB" maxlength="30" placeholder="${t('Pilihan 2')}"><button class="btn primary" id="pOk">${t('Bagikan Cerita')}</button>`, sh => {
+    $('#pOk', sh).onclick = () => { const q = $('#pQ', sh).value.trim(), a = $('#pA', sh).value.trim(), b = $('#pB', sh).value.trim(); if (!q || !a || !b) return toast(t('Lengkapi pertanyaan dan dua pilihan.'));
+      S.stories.push({ id: nid(), uid: me().id, t: Date.now(), type: 'text', text: q, bg, poll: { opts: [a, b], votes: {} } }); save(); closeSheet(); toast(t('Cerita dibagikan')); refresh(); };
+  });
+}
+{ const _ss = showStory; showStory = function () {
+  _ss(); const st = storyState; if (!st) return; const sty = st.list[st.i]; if (!sty || !sty.poll) return; const m = me(), pl = sty.poll, mine = pl.votes[m.id], tot = Object.keys(pl.votes).length;
+  const box = document.createElement('div'); box.className = 'poll';
+  box.innerHTML = pl.opts.map((o, i) => { const n = Object.values(pl.votes).filter(v => v === i).length, pc = tot ? Math.round(n / tot * 100) : 0; return `<button data-pv="${i}">${mine !== undefined ? `<i style="width:${pc}%"></i>` : ''}<span>${esc(o)}${mine !== undefined ? `<em>${pc}%${mine === i ? ' ✓' : ''}</em>` : ''}</span></button>`; }).join('');
+  $('.sv-body', $('#storyView')).appendChild(box);
+}; }
+document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-pv]'); if (!b || !storyState) return; const m = me(), sty = storyState.list[storyState.i]; if (!m || !sty || !sty.poll || sty.poll.votes[m.id] !== undefined) return; sty.poll.votes[m.id] = +b.dataset.pv; save(); showStory(); });
+function pickMedia(cam) { return new Promise(res => { const i = document.createElement('input'); i.type = 'file'; i.accept = 'image/*,video/*'; if (cam) i.setAttribute('capture', 'environment'); i.onchange = () => res(i.files[0] || null); i.click(); }); }
+async function startLive() {
+  const m = me(); if (!m) return toast(t('Masuk dulu ya.')); const ph = $('.phone'); let sec = 0, v = 1, hearts = 0, stream = null, rec = null, chunks = [], facing = 'user';
+  const o = document.createElement('div'); o.className = 'live';
+  o.innerHTML = `<video id="lvVid" autoplay muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video><div class="lh" style="position:relative;z-index:2"><b>LIVE</b><span id="lvT">00:00</span><span style="margin-left:auto">👁 <span id="lvV">1</span></span></div><div class="lc" id="lvC" style="position:relative;z-index:2;margin-top:12px"></div><div class="lf" style="position:relative;z-index:2"><button id="lvH">❤️ <span id="lvHc">0</span></button><button id="lvF" aria-label="Balik kamera">🔄</button><button id="lvM" aria-label="Mic">🎙️</button><button class="end" id="lvE">${t('Akhiri')}</button></div>`; ph.appendChild(o);
+  const vid = $('#lvVid', o);
+  const startRec = () => { chunks = []; rec = null; if (stream && window.MediaRecorder) { try { rec = new MediaRecorder(stream); rec.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); }; rec.start(1000); } catch (e) { rec = null; } } };
+  const open = async () => {
+    if (stream) stream.getTracks().forEach(x => x.stop());
+    try { stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facing }, audio: true }); }
+    catch (e) { try { stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facing } }); } catch (e2) { stream = null; toast(t('Kamera tidak bisa diakses. Live berjalan tanpa kamera.')); } }
+    vid.srcObject = stream; vid.style.display = stream ? '' : 'none'; startRec();
+  };
+  await open();
+  const lines = ['Halo kak! 👋', 'Keren banget 🔥', 'Salam dari Jogja', 'Suaranya jelas', 'Lanjut kak!', 'Pertama kali nonton nih', '😍😍', 'Bahas apa hari ini?']; const names = S.users.map(u => u.username).concat(['rina', 'dika', 'putri', 'andi']);
+  const iv = setInterval(() => { sec++; v = Math.max(1, v + Math.floor(Math.random() * 4) - 1); $('#lvT', o).textContent = String(Math.floor(sec / 60)).padStart(2, '0') + ':' + String(sec % 60).padStart(2, '0'); $('#lvV', o).textContent = v;
+    if (Math.random() < .7) { const c = $('#lvC', o), el = document.createElement('p'); el.innerHTML = `<b>${esc(pick(names))}</b> ${esc(pick(lines))}`; c.appendChild(el); c.scrollTop = c.scrollHeight; } }, 1500);
+  $('#lvH', o).onclick = () => { hearts++; $('#lvHc', o).textContent = hearts; };
+  $('#lvF', o).onclick = async () => { facing = facing === 'user' ? 'environment' : 'user'; await open(); };
+  $('#lvM', o).onclick = e => { if (!stream) return; const on = stream.getAudioTracks().some(x => x.enabled); stream.getAudioTracks().forEach(x => x.enabled = !on); e.currentTarget.style.opacity = on ? .45 : 1; };
+  $('#lvE', o).onclick = async () => {
+    clearInterval(iv); if (rec && rec.state !== 'inactive') await new Promise(r => { rec.onstop = r; rec.stop(); });
+    if (stream) stream.getTracks().forEach(x => x.stop()); o.remove();
+    const cap = `🔴 Live selesai · ${sec} detik · ${v} penonton · ${hearts} ❤️`;
+    if (chunks.length && sec > 2) { const blob = new Blob(chunks, { type: (rec && rec.mimeType) || 'video/webm' });
+      confirmSheet(t('Simpan rekaman live sebagai postingan video?'), t('Simpan'), async () => { const k = await putMedia(blob); S.posts.push({ id: nid(), uid: m.id, t: Date.now(), text: cap, type: 'video', media: k, cid: null, likes: [], comments: [], views: 0 }); save(); toast(t('Rekaman live disimpan')); refresh(); }, false); }
+    else { S.posts.push({ id: nid(), uid: m.id, t: Date.now(), text: cap + ' (simulasi)', type: 'text', media: null, cid: null, likes: [], comments: [], views: 0 }); save(); toast(t('Live selesai')); refresh(); }
+  };
+}
+function scheduleSheet() {
+  if (!needUser()) return; const d = new Date(Date.now() + 36e5); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); let file = null;
+  openSheet(t('Jadwalkan Postingan'), `<textarea class="in" id="scT" maxlength="500" placeholder="${t('Tulis postingan...')}"></textarea><div class="row-gap" style="margin:0 0 10px"><button class="btn dark grow" id="scG">🖼️ ${t('Galeri')}</button><button class="btn dark grow" id="scC">📷 ${t('Kamera')}</button></div><p class="muted small" id="scF" hidden></p><input class="in" id="scD" type="datetime-local" value="${d.toISOString().slice(0, 16)}"><p class="muted small">${t('Terbit otomatis saat aplikasi terbuka pada waktu itu.')}</p><button class="btn primary" id="scOk">${t('Jadwalkan')}</button>`, sh => {
+    const choose = async cam => { const f = await pickMedia(cam); if (!f) return; if (f.size > 60 * 1048576) return toast(t('File terlalu besar (maks 60 MB).')); file = f; const el = $('#scF', sh); el.hidden = false; el.textContent = (f.type.startsWith('video') ? '🎬 ' : '🖼️ ') + f.name; };
+    $('#scG', sh).onclick = () => choose(false); $('#scC', sh).onclick = () => choose(true);
+    $('#scOk', sh).onclick = async () => { const x = $('#scT', sh).value.trim(), at = new Date($('#scD', sh).value).getTime(); if ((!x && !file) || !at || at < Date.now()) return toast(t('Isi teks atau media dan pilih waktu yang akan datang.'));
+      let media = null, type = 'text'; if (file) { const isV = file.type.startsWith('video'); media = await putMedia(isV ? file : await prepImage(file, 1080)); type = isV ? 'video' : 'image'; }
+      (S.scheduled = S.scheduled || []).push({ id: nid(), uid: me().id, text: x, at, type, media }); save(); closeSheet(); toast(t('Postingan dijadwalkan')); };
+  });
+}
+function runSchedule() {
+  const m = me(); if (!m || !S.scheduled || !S.scheduled.length) return; const due = S.scheduled.filter(x => x.uid === m.id && x.at <= Date.now()); if (!due.length) return;
+  due.forEach(x => S.posts.push({ id: nid(), uid: x.uid, t: Date.now(), text: x.text, type: x.type || 'text', media: x.media || null, cid: null, likes: [], comments: [], views: 0 }));
+  S.scheduled = S.scheduled.filter(x => !due.includes(x)); save(); toast(t('Postingan terjadwal diterbitkan')); refresh();
+}
+/* ----- Mode offline, tarik untuk muat ulang, draf otomatis, riwayat pencarian ----- */
+{
+  const ph = () => $('.phone'); let bar = null;
+  const showBar = (txt, ok) => { if (!bar) { bar = document.createElement('div'); bar.className = 'offbar'; bar.setAttribute('role', 'status'); ph().appendChild(bar); } bar.textContent = txt; bar.classList.toggle('ok', !!ok); requestAnimationFrame(() => bar.classList.add('show')); if (ok) setTimeout(() => bar.classList.remove('show'), 2200); };
+  window.addEventListener('offline', () => showBar(t('Kamu sedang offline. Data tetap tersimpan di perangkat.')));
+  window.addEventListener('online', () => showBar(t('Kembali online'), true));
+  if (!navigator.onLine) setTimeout(() => showBar(t('Kamu sedang offline. Data tetap tersimpan di perangkat.')), 800);
+
+  // tarik untuk muat ulang (Beranda dan Explore)
+  let y0 = null, sc = null, ind = null, dist = 0;
+  const TH = 70;
+  document.addEventListener('touchstart', e => { const el = e.target.closest && e.target.closest('[data-screen="home"].active .scroll, [data-screen="explore"].active .scroll'); if (el && el.scrollTop <= 0) { sc = el; y0 = e.touches[0].clientY; dist = 0; ind = sc.querySelector(':scope > .ptr'); if (!ind) { ind = document.createElement('div'); ind.className = 'ptr'; sc.prepend(ind); } } else { sc = null; y0 = null; } }, { passive: true });
+  document.addEventListener('touchmove', e => { if (y0 == null || !sc) return; const d = e.touches[0].clientY - y0; if (d <= 0 || sc.scrollTop > 0) { dist = 0; ind.style.height = '0'; return; } dist = Math.min(d * .5, TH + 20); ind.style.transition = 'none'; ind.style.height = dist + 'px'; ind.textContent = dist >= TH ? '↑ ' + t('Lepas untuk memuat ulang') : '↓ ' + t('Tarik untuk memuat ulang'); }, { passive: true });
+  document.addEventListener('touchend', () => { if (y0 == null || !sc) return; const el = ind, go_ = dist >= TH; ind.style.transition = 'height .25s'; if (go_) { el.style.height = '40px'; el.textContent = t('Memuat...'); setTimeout(() => { try { refresh(); } catch (e) { } el.style.height = '0'; toast(t('Diperbarui')); }, 600); } else el.style.height = '0'; y0 = null; sc = null; dist = 0; });
+
+  // draf otomatis postingan
+  const dk = () => { const m = me(); return m ? 'kynex-draft-' + m.id : null; };
+  let dt = null;
+  document.addEventListener('input', e => { if (e.target.id !== 'cText') return; clearTimeout(dt); dt = setTimeout(() => { const k = dk(); if (!k) return; try { e.target.value.trim() ? localStorage.setItem(k, e.target.value) : localStorage.removeItem(k); } catch (x) { } }, 400); });
+  const restore = () => { const k = dk(), box = $('#cText'); if (!k || !box || box.value.trim()) return; let v = null; try { v = localStorage.getItem(k); } catch (x) { } if (v) { box.value = v; toast(t('Draf dipulihkan')); } };
+  { const _go = go; go = function (n, p, o) { const r = _go(n, p, o); if (n === 'compose') setTimeout(restore, 80); return r; }; }
+  document.addEventListener('click', e => { if (!(e.target.closest && e.target.closest('#cPost'))) return; const n = S.posts.length, k = dk(); setTimeout(() => { if (k && S.posts.length > n) { try { localStorage.removeItem(k); } catch (x) { } } }, 1500); }, true);
+
+  // riwayat dan saran pencarian
+  const hk = () => { const m = me(); return 'kynex-hist-' + (m ? m.id : 'guest'); };
+  const getH = () => { try { return JSON.parse(localStorage.getItem(hk()) || '[]'); } catch (x) { return []; } };
+  const setH = a => { try { localStorage.setItem(hk(), JSON.stringify(a.slice(0, 8))); } catch (x) { } };
+  const addH = q => { q = q.trim(); if (q.length < 2) return; setH([q].concat(getH().filter(x => x.toLowerCase() !== q.toLowerCase()))); };
+  let panel = null;
+  const drawHist = () => {
+    const inp = $('#exSearch'); if (!inp) return; const lab = inp.closest('label');
+    if (!panel) { panel = document.createElement('div'); panel.className = 'hist'; panel.hidden = true; lab.after(panel); }
+    if (inp.value.trim()) { panel.hidden = true; return; }
+    const h = getH(), counts = {}; S.posts.filter(visiblePost).forEach(p => tagsOf(p.text).forEach(g => counts[g] = (counts[g] || 0) + 1));
+    const tags = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5).map(x => '#' + x[0]);
+    const ppl = S.users.filter(userVisible).map(u => ({ u, n: followersOf(u.id).length })).sort((a, b) => b.n - a.n).slice(0, 3).map(x => '@' + x.u.username);
+    const chip = (x, del) => `<span class="chip" data-hq="${esc(x)}">${esc(x)}${del ? `<button data-hd="${esc(x)}" aria-label="Hapus">✕</button>` : ''}</span>`;
+    panel.innerHTML = (h.length ? `<div class="hh"><b class="small">${t('Pencarian terakhir')}</b><a class="link" href="#" data-hc="1">${t('Hapus semua')}</a></div><div class="chips">${h.map(x => chip(x, 1)).join('')}</div>` : '') + ((tags.length || ppl.length) ? `<div class="hh"><b class="small">${t('Saran untukmu')}</b></div><div class="chips">${tags.concat(ppl).map(x => chip(x, 0)).join('')}</div>` : '');
+    panel.hidden = !panel.innerHTML;
+  };
+  document.addEventListener('focusin', e => { if (e.target.id === 'exSearch') drawHist(); });
+  document.addEventListener('input', e => { if (e.target.id === 'exSearch') drawHist(); });
+  document.addEventListener('focusout', e => { if (e.target.id === 'exSearch') { addH(e.target.value); setTimeout(() => { if (panel) panel.hidden = true; }, 200); } });
+  document.addEventListener('keydown', e => { if (e.target.id === 'exSearch' && e.key === 'Enter') { addH(e.target.value); e.target.blur(); } });
+  document.addEventListener('pointerdown', e => {
+    const d = e.target.closest && e.target.closest('[data-hd]'), c = e.target.closest && e.target.closest('[data-hq]'), all = e.target.closest && e.target.closest('[data-hc]');
+    if (d) { e.preventDefault(); setH(getH().filter(x => x !== d.dataset.hd)); drawHist(); }
+    else if (all) { e.preventDefault(); setH([]); drawHist(); }
+    else if (c) { e.preventDefault(); const i = $('#exSearch'); i.value = c.dataset.hq; i.dispatchEvent(new Event('input', { bubbles: true })); addH(i.value); if (panel) panel.hidden = true; }
+  });
+}
+setInterval(runSchedule, 15000); setTimeout(runSchedule, 1500);
+const postOf = el => { const h = el.closest('[data-post]'); return h ? h.dataset.post : null; };
+
+function profMenu(uid) {
+  const u = U(uid); if (!u) return;
+  actionSheet('@' + u.username, [{ ic: '🔗', label: t('Salin info profil'), fn: () => copyText(u.name + ' (@' + u.username + ') — KYNEX') }, { ic: '⛔', label: t('Blokir pengguna'), danger: true, fn: () => blockUser(uid) }]);
+}
+async function pickAvatarOrCover(kind) {
+  const f = await pickFile('image/*'); if (!f) return; const b = await prepImage(f, kind === 'avatar' ? 480 : 1100); ep[kind] = b; const url = URL.createObjectURL(b);
+  if (kind === 'avatar') $('#epAv').innerHTML = `<div class="avatar"><img src="${url}" alt=""></div>`;
+  else $('#epCover').innerHTML = `<img src="${url}" style="width:100%;height:100%;object-fit:cover" alt=""><span>${t('Ganti sampul')}</span>`;
+}
+async function saveProfile() {
+  const m = me(); const name = $('#epName').value.trim(), user = $('#epUser').value.trim().replace(/^@/, ''), bio = $('#epBio').value.trim(); const er = $('#epErr');
+  const bad = x => { er.textContent = x; er.hidden = false; };
+  if (!name) return bad(t('Nama tidak boleh kosong.')); if (!/^[a-z0-9_.]{3,20}$/i.test(user)) return bad(t('Username 3–20 karakter (huruf, angka, _ atau .).'));
+  if (S.users.some(u => u.id !== m.id && u.username.toLowerCase() === user.toLowerCase()) || user.toLowerCase() === 'kynex.ai') return bad(t('Username sudah dipakai.'));
+  for (const kind of ['avatar', 'cover']) if (ep[kind]) { const old = m[kind]; m[kind] = await putMedia(ep[kind]); if (old) await dbDel(old); }
+  m.name = name; m.username = user; m.bio = bio; save(); toast(t('Profil diperbarui')); back();
+}
+function setupCompose() {
+  $('#cMedia').onclick = async () => {
+    const f = await pickFile('image/*,video/*'); if (!f) return; const isV = f.type.startsWith('video');
+    if (isV && f.size > 40 * 1024 * 1024) return toast(t('Video maksimal 40 MB.'));
+    if (draft.url) URL.revokeObjectURL(draft.url);
+    draft.blob = isV ? f : await prepImage(f, 1080); draft.type = isV ? 'video' : 'image'; draft.url = URL.createObjectURL(draft.blob);
+    const pv = $('#cPreview'); pv.innerHTML = (isV ? `<video src="${draft.url}" controls playsinline></video>` : `<img src="${draft.url}" alt="">`) + `<button id="cRm" aria-label="Hapus">✕</button>`; pv.hidden = false;
+    $('#cRm').onclick = () => { URL.revokeObjectURL(draft.url); draft = { blob: null, type: 'text', url: null }; pv.hidden = true; pv.innerHTML = ''; };
+  };
+  $('#cCap').onclick = () => { const x = $('#cText').value.trim().replace(/#\S+/g, '').split(/\s+/).slice(0, 4).join(' '); const cap = AIB.caption(x); $('#cText').value = ($('#cText').value.trim() ? $('#cText').value.trim() + '\n' : '') + cap; };
+  $('#cPost').onclick = async () => {
+    const m = me(); if (!m) return; const text = $('#cText').value.trim(); if (!text && !draft.blob) return toast(t('Tulis sesuatu atau tambahkan media.'));
+    $('#cPost').disabled = true; const key = draft.blob ? await putMedia(draft.blob) : null;
+    S.posts.push({ id: nid(), uid: m.id, t: Date.now(), text, type: draft.type, media: key, cid: $('#cCom').value || null, likes: [], comments: [], views: 0 });
+    save(); toast(t('Postingan dibagikan')); stack = []; go('home');
+  };
+}
+function setupChatUI() {
+  const send = () => { const i = $('#msgInput'); const v = i.value.trim(); if (!v) return; i.value = ''; sendMsg(params.peer, v); };
+  $('#msgSend').onclick = send; $('#msgInput').onkeydown = e => { if (e.key === 'Enter') send(); };
+  $('#stickerBtn').onclick = stickerSheet;
+  $$('#aiChips button').forEach(b => b.onclick = () => { const v = b.dataset.ai; if (v.endsWith(' ')) { $('#msgInput').value = v; $('#msgInput').focus(); } else sendMsg('ai', v); });
+}
+function addComment() {
+  const p = S.posts.find(x => x.id === params.id); if (!p || !needUser()) return; const i = $('#cmtInput'); const v = i.value.trim(); if (!v) return; const m = me();
+  p.comments.push({ id: nid(), uid: m.id, text: v, t: Date.now() }); notify(p.uid, 'comment', { post: p.id, text: v }); i.value = ''; save(); renderPostDetail();
+  const b = $('#postBox'); b.scrollTop = b.scrollHeight;
+}
+
+document.addEventListener('click', e => {
+  const tg = e.target;
+  const sv = tg.closest('[data-sv]'); if (sv) { const a = sv.dataset.sv; if (a === 'close') closeStory(); else if (a === 'next') storyNav(1); else if (a === 'prev') storyNav(-1); else if (a === 'del') delStory(); return; }
+  if (tg.closest('[data-close]')) { closeSheet(); return; }
+  if (tg.closest('[data-guest]')) { e.preventDefault(); S.session = { guest: true }; save(); toast(t('Masuk sebagai tamu')); startApp(); return; }
+  if (tg.closest('[data-back]')) { back(); return; }
+  const a = tg.closest('[data-act]');
+  if (a) {
+    e.preventDefault(); const k = a.dataset.act, pid = postOf(a);
+    switch (k) {
+      case 'like': toggleLike(pid); break;
+      case 'save': toggleSave(pid); break;
+      case 'share': sharePost(pid); break;
+      case 'postmenu': postMenu(pid); break;
+      case 'comments': if (cur === 'post') $('#cmtInput').focus(); else go('post', { id: pid }); break;
+      case 'follow': doFollow(a.dataset.uid); break;
+      case 'join': toggleJoin(a.dataset.cid); break;
+      case 'opencom': go('cdetail', { id: a.dataset.cid }); break;
+      case 'newcom': newCommunitySheet(); break;
+      case 'commenu': comMenu(); break;
+      case 'compcom': if (needUser()) go('compose', { cid: a.dataset.cid }); break;
+      case 'openchat': { if (!needUser()) break; if (a.dataset.peer === me().id) break; go('convo', { peer: a.dataset.peer }); break; }
+      case 'newchat': newChatSheet(); break;
+      case 'openai': if (needUser()) go('convo', { peer: 'ai' }); break;
+      case 'flist': flist(a.dataset.kind, a.dataset.uid); break;
+      case 'profmenu': profMenu(a.dataset.uid); break;
+      case 'shareprof': copyText(me().name + ' (@' + me().username + ') — KYNEX'); break;
+      case 'pickcover': pickAvatarOrCover('cover'); break;
+      case 'pickavatar': pickAvatarOrCover('avatar'); break;
+      case 'story': openStory(a.dataset.uid); break;
+      case 'addstory': addStorySheet(); break;
+      case 'plus': plusSheet(); break;
+      case 'forgot': forgotSheet(); break;
+      case 'google': googleAuth(); break;
+      case 'setting': settingsAction(a.dataset.k); break;
+      case 'twofa': twoFA(); break;
+      case 'chpass': changePassSheet(); break;
+      case 'blocked': blockedSheet(); break;
+      case 'delacct': deleteAccountSheet(); break;
+      case 'product': productSheet(a.dataset.pid); break;
+      case 'sell': sellSheet(); break;
+      case 'cart': cartSheet(); break;
+      case 'delcmt': { const p = S.posts.find(x => x.id === params.id); if (p) { p.comments = p.comments.filter(c => c.id !== a.dataset.cid); save(); renderPostDetail(); } break; }
+      case 'clearnotifs': confirmSheet(t('Hapus semua notifikasi?'), t('Hapus'), () => { S.notifs = S.notifs.filter(n => n.to !== me().id); save(); renderNotifs(); updateBadges(); }); break;
+      case 'opennotif': { const n = S.notifs.find(x => x.id === a.dataset.nid); if (!n) break; if (n.post && S.posts.some(p => p.id === n.post)) go('post', { id: n.post }); else if (n.type === 'order') go('studio'); else go('profile', { uid: n.from }); break; }
+    }
+    return;
+  }
+  const tag = tg.closest('[data-tag]'); if (tag) { e.preventDefault(); openTag(tag.dataset.tag.toLowerCase()); return; }
+  const g = tg.closest('[data-go]'); if (g) { e.preventDefault(); stack = g.dataset.go === 'splash' ? [] : stack; go(g.dataset.go); return; }
+  const n = tg.closest('[data-nav]'); if (n) { if (n.dataset.nav === 'profile') go('profile'); else go(n.dataset.nav); return; }
+  const op = tg.closest('[data-openpost]'); if (op) { go('post', { id: op.dataset.openpost }); return; }
+  const us = tg.closest('[data-user]'); if (us && us.dataset.user) { const id = us.dataset.user; if (id === (me() && me().id)) go('profile'); else go('profile', { uid: id }); return; }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await openDB(); S = load(); LANG = S.settings.lang || 'id';
+  if (S.session && S.session.uid && !U(S.session.uid)) S.session = null;
+  await loadMedia(); applyTheme(); collectI18N(); paintIcons(); buildSide(); if (LANG === 'en') applyLang();
+  setupCompose(); setupChatUI();
+
+  $('#eye').onclick = () => { const i = $('#pass'); i.type = i.type === 'password' ? 'text' : 'password'; };
+  $('#regEye').onclick = () => { const i = $('#regPass'); i.type = i.type === 'password' ? 'text' : 'password'; };
+  $('#loginForm').onsubmit = ev => { ev.preventDefault(); doLogin(); };
+  $('#regForm').onsubmit = ev => { ev.preventDefault(); doRegister(); };
+  $('#epSave').onclick = saveProfile;
+  $('#exSearch').oninput = renderExplore; $('#exClear').onclick = () => { $('#exSearch').value = ''; renderExplore(); };
+  $('#chatSearch').oninput = renderChats; $('#comSearch').oninput = renderCommunities; $('#setSearch').oninput = renderSettings; $('#mkSearch').oninput = renderMarket;
+  $('#cmtSend').onclick = addComment; $('#cmtInput').onkeydown = ev => { if (ev.key === 'Enter') addComment(); };
+  $('#muteBtn').onclick = () => { vMuted = !vMuted; $('#muteBtn').textContent = vMuted ? '🔇' : '🔊'; $$('#vfeed video').forEach(v => v.muted = vMuted); };
+  $('#logout').onclick = () => { const wasUser = !!me(); S.session = null; save(); stack = []; toast(wasUser ? t('Berhasil keluar') : ''); go(wasUser ? 'splash' : 'login'); };
+  $('#upgrade').onclick = () => { if (!needUser()) return; const m = me(); if (m.premium) return toast(t('Premium sudah aktif')); m.premium = true; save(); renderPremium(); toast(t('Terima kasih! Premium aktif 👑')); };
+  $('#cancelPrem').onclick = ev => { ev.preventDefault(); me().premium = false; save(); renderPremium(); toast(t('Premium dibatalkan')); };
+
+  window.addEventListener('storage', ev => { if (ev.key !== KEY) return; const ses = S.session; S = load(); S.session = ses; loadMedia().then(refresh); });
+  window.addEventListener('beforeinstallprompt', ev => { ev.preventDefault(); deferredInstall = ev; });
+  try { matchMedia('(prefers-color-scheme: light)').addEventListener('change', applyTheme); } catch (e) { }
+  setInterval(() => { if (cur === 'home' || cur === 'notifs') updateBadges(); }, 15000);
+  try { if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(() => { }); } catch (e) { }
+
+  const first = (me() || isGuest()) ? 'home' : 'splash'; go(first);
+});
+
+
+</script>
+</body>
+</html>
